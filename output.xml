@@ -1,0 +1,1030 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.13.0 on win32)" generated="2025-09-30T12:27:08.656831" rpa="false" schemaversion="5">
+<suite id="s1" name="Shabu Usecases" source="c:\Users\Acer\Downloads\SHABU TEST CASE 2.0\SHABU TEST CASE 2.0\shabu_robot_project\tests\shabu_usecases.robot">
+<kw name="Log To Console" owner="BuiltIn" type="SETUP">
+<arg>\nเริ่มรันทดสอบชุด: Shabu Buffet Management ()\n</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.856656" elapsed="0.000500"/>
+</kw>
+<test id="s1-t1" name="UC01 | สร้างลูกค้าใหม่ (Customer Create)" line="52">
+<kw name="Create">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-30T12:27:08.859754" level="INFO">สร้าง ลูกค้า: {'id': 2, 'name': 'สมหญิง ใจดี', 'phone': '0898765432', 'email': 'somyhing@example.com'}</msg>
+<arg>สร้าง ${entity}: ${details}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.859405" elapsed="0.002178"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-09-30T12:27:08.862723" level="INFO">${_last_create_entity} = ลูกค้า</msg>
+<arg>${_last_create_entity}</arg>
+<arg>${entity}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.861859" elapsed="0.001058"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-09-30T12:27:08.863813" level="INFO">${_last_create_details} = {'id': 2, 'name': 'สมหญิง ใจดี', 'phone': '0898765432', 'email': 'somyhing@example.com'}</msg>
+<arg>${_last_create_details}</arg>
+<arg>${details}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.863150" elapsed="0.000786"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.864080" elapsed="0.000165"/>
+</kw>
+<arg>ลูกค้า</arg>
+<arg>{'id': 2, 'name': 'สมหญิง ใจดี', 'phone': '0898765432', 'email': 'somyhing@example.com'}</arg>
+<status status="PASS" start="2025-09-30T12:27:08.858718" elapsed="0.005624"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.864907" elapsed="0.000211"/>
+</kw>
+<doc>UC01 - สร้างลูกค้าใหม่ (Customer Create)</doc>
+<tag>Customer</tag>
+<status status="PASS" start="2025-09-30T12:27:08.857431" elapsed="0.008046"/>
+</test>
+<test id="s1-t2" name="UC02 | ค้นหาลูกค้า (Customer Search)" line="58">
+<kw name="Step Should Succeed">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-30T12:27:08.868747" level="INFO">ค้นหาลูกค้าด้วยเบอร์โทร 0812345678 และพบข้อมูลสมชาย ไทยแท้</msg>
+<arg>${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.867908" elapsed="0.001528"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.869697" elapsed="0.000347"/>
+</kw>
+<arg>ค้นหาลูกค้าด้วยเบอร์โทร 0812345678 และพบข้อมูลสมชาย ไทยแท้</arg>
+<status status="PASS" start="2025-09-30T12:27:08.867304" elapsed="0.002926"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.870716" elapsed="0.000228"/>
+</kw>
+<doc>UC02 - ค้นหาลูกค้า (Customer Search)</doc>
+<tag>Customer</tag>
+<status status="PASS" start="2025-09-30T12:27:08.866361" elapsed="0.004961"/>
+</test>
+<test id="s1-t3" name="UC03 | แก้ไขข้อมูลลูกค้า (Customer Update)" line="64">
+<kw name="Update">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-30T12:27:08.874284" level="INFO">อัปเดต ลูกค้า ID 1: {'id': 1, 'name': 'สมชาย ไทยแท้ (แก้ไข)', 'phone': '0812345678', 'email': 'somchai.updated@example.com'}</msg>
+<arg>อัปเดต ${entity} ID ${id}: ${new_details}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.874081" elapsed="0.000334"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-09-30T12:27:08.875131" level="INFO">${_last_update_entity} = ลูกค้า</msg>
+<arg>${_last_update_entity}</arg>
+<arg>${entity}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.874546" elapsed="0.000713"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-09-30T12:27:08.875837" level="INFO">${_last_update_id} = 1</msg>
+<arg>${_last_update_id}</arg>
+<arg>${id}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.875396" elapsed="0.000525"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-09-30T12:27:08.876416" level="INFO">${_last_update_details} = {'id': 1, 'name': 'สมชาย ไทยแท้ (แก้ไข)', 'phone': '0812345678', 'email': 'somchai.updated@example.com'}</msg>
+<arg>${_last_update_details}</arg>
+<arg>${new_details}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.876028" elapsed="0.000473"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.876598" elapsed="0.000171"/>
+</kw>
+<arg>ลูกค้า</arg>
+<arg>1</arg>
+<arg>{'id': 1, 'name': 'สมชาย ไทยแท้ (แก้ไข)', 'phone': '0812345678', 'email': 'somchai.updated@example.com'}</arg>
+<status status="PASS" start="2025-09-30T12:27:08.873710" elapsed="0.003182"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.877194" elapsed="0.000167"/>
+</kw>
+<doc>UC03 - แก้ไขข้อมูลลูกค้า (Customer Update)</doc>
+<tag>Customer</tag>
+<status status="PASS" start="2025-09-30T12:27:08.872423" elapsed="0.005266"/>
+</test>
+<test id="s1-t4" name="UC04 | ลบลูกค้า (Customer Delete)" line="70">
+<kw name="Delete">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-30T12:27:08.880117" level="INFO">ลบ ลูกค้า ID 1</msg>
+<arg>ลบ ${entity} ID ${id}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.879963" elapsed="0.000277"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-09-30T12:27:08.880846" level="INFO">${_last_delete_entity} = ลูกค้า</msg>
+<arg>${_last_delete_entity}</arg>
+<arg>${entity}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.880358" elapsed="0.000610"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-09-30T12:27:08.881500" level="INFO">${_last_delete_id} = 1</msg>
+<arg>${_last_delete_id}</arg>
+<arg>${id}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.881086" elapsed="0.000495"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.881682" elapsed="0.000123"/>
+</kw>
+<arg>ลูกค้า</arg>
+<arg>1</arg>
+<status status="PASS" start="2025-09-30T12:27:08.879638" elapsed="0.002432"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.882433" elapsed="0.000172"/>
+</kw>
+<doc>UC04 - ลบลูกค้า (Customer Delete)</doc>
+<tag>Customer</tag>
+<status status="PASS" start="2025-09-30T12:27:08.878700" elapsed="0.004210"/>
+</test>
+<test id="s1-t5" name="UC05 | ตรวจสอบความซ้ำของเบอร์โทร (Phone Duplicate Check)" line="76">
+<kw name="Step Should Succeed">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-30T12:27:08.889120" level="INFO">ตรวจสอบเบอร์ 0812345678 และพบว่าซ้ำกับลูกค้าที่มีอยู่</msg>
+<arg>${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.888767" elapsed="0.000600"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.889677" elapsed="0.000381"/>
+</kw>
+<arg>ตรวจสอบเบอร์ 0812345678 และพบว่าซ้ำกับลูกค้าที่มีอยู่</arg>
+<status status="PASS" start="2025-09-30T12:27:08.888303" elapsed="0.001932"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.890728" elapsed="0.000246"/>
+</kw>
+<doc>UC05 - ตรวจสอบความซ้ำของเบอร์โทร (Phone Duplicate Check)</doc>
+<tag>Customer</tag>
+<status status="PASS" start="2025-09-30T12:27:08.885498" elapsed="0.005884"/>
+</test>
+<test id="s1-t6" name="UC06 | ผูกสมาชิกกับประวัติการสั่งซื้อ (Link Member History)" line="82">
+<kw name="Step Should Succeed">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-30T12:27:08.895074" level="INFO">ผูกลูกค้า ID 1 กับออเดอร์ ID 101</msg>
+<arg>${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.894899" elapsed="0.000311"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.895342" elapsed="0.000130"/>
+</kw>
+<arg>ผูกลูกค้า ID 1 กับออเดอร์ ID 101</arg>
+<status status="PASS" start="2025-09-30T12:27:08.894469" elapsed="0.001081"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.895899" elapsed="0.000238"/>
+</kw>
+<doc>UC06 - ผูกสมาชิกกับประวัติการสั่งซื้อ (Link Member History)</doc>
+<tag>Customer</tag>
+<status status="PASS" start="2025-09-30T12:27:08.892327" elapsed="0.004198"/>
+</test>
+<test id="s1-t7" name="UC07 | จองโต๊ะ (Create Reservation)" line="88">
+<kw name="Create">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-30T12:27:08.899584" level="INFO">สร้าง การจอง: {'table': 1, 'customer_id': 1, 'time': '18:00', 'date': '2025-09-30'}</msg>
+<arg>สร้าง ${entity}: ${details}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.899257" elapsed="0.000525"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-09-30T12:27:08.900238" level="INFO">${_last_create_entity} = การจอง</msg>
+<arg>${_last_create_entity}</arg>
+<arg>${entity}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.900006" elapsed="0.000351"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-09-30T12:27:08.900628" level="INFO">${_last_create_details} = {'table': 1, 'customer_id': 1, 'time': '18:00', 'date': '2025-09-30'}</msg>
+<arg>${_last_create_details}</arg>
+<arg>${details}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.900471" elapsed="0.000239"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.900829" elapsed="0.000167"/>
+</kw>
+<arg>การจอง</arg>
+<arg>{'table': 1, 'customer_id': 1, 'time': '18:00', 'date': '2025-09-30'}</arg>
+<status status="PASS" start="2025-09-30T12:27:08.898835" elapsed="0.002265"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.902587" elapsed="0.000856"/>
+</kw>
+<doc>UC07 - จองโต๊ะ (Create Reservation)</doc>
+<tag>Reservation</tag>
+<status status="PASS" start="2025-09-30T12:27:08.897910" elapsed="0.006624"/>
+</test>
+<test id="s1-t8" name="UC08 | แก้ไขการจอง (Edit Reservation)" line="94">
+<kw name="Update">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-30T12:27:08.912745" level="INFO">อัปเดต การจอง ID 1: {'table': 2, 'customer_id': 1, 'time': '19:00', 'date': '2025-09-30'}</msg>
+<arg>อัปเดต ${entity} ID ${id}: ${new_details}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.912465" elapsed="0.000471"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-09-30T12:27:08.913504" level="INFO">${_last_update_entity} = การจอง</msg>
+<arg>${_last_update_entity}</arg>
+<arg>${entity}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.913151" elapsed="0.000558"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-09-30T12:27:08.914195" level="INFO">${_last_update_id} = 1</msg>
+<arg>${_last_update_id}</arg>
+<arg>${id}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.913950" elapsed="0.000377"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-09-30T12:27:08.914679" level="INFO">${_last_update_details} = {'table': 2, 'customer_id': 1, 'time': '19:00', 'date': '2025-09-30'}</msg>
+<arg>${_last_update_details}</arg>
+<arg>${new_details}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.914485" elapsed="0.000321"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.914954" elapsed="0.000152"/>
+</kw>
+<arg>การจอง</arg>
+<arg>1</arg>
+<arg>{'table': 2, 'customer_id': 1, 'time': '19:00', 'date': '2025-09-30'}</arg>
+<status status="PASS" start="2025-09-30T12:27:08.911924" elapsed="0.003309"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.915636" elapsed="0.000301"/>
+</kw>
+<doc>UC08 - แก้ไขการจอง (Edit Reservation)</doc>
+<tag>Reservation</tag>
+<status status="PASS" start="2025-09-30T12:27:08.910978" elapsed="0.005310"/>
+</test>
+<test id="s1-t9" name="UC09 | ยกเลิกการจอง (Cancel Reservation)" line="100">
+<kw name="Step Should Succeed">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-30T12:27:08.923187" level="INFO">ยกเลิกการจองโต๊ะ 1 สำหรับลูกค้า ID 1</msg>
+<arg>${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.922541" elapsed="0.000860"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.923597" elapsed="0.000198"/>
+</kw>
+<arg>ยกเลิกการจองโต๊ะ 1 สำหรับลูกค้า ID 1</arg>
+<status status="PASS" start="2025-09-30T12:27:08.919699" elapsed="0.004215"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.924260" elapsed="0.000192"/>
+</kw>
+<doc>UC09 - ยกเลิกการจอง (Cancel Reservation)</doc>
+<tag>Reservation</tag>
+<status status="PASS" start="2025-09-30T12:27:08.917247" elapsed="0.007529"/>
+</test>
+<test id="s1-t10" name="UC10 | เช็คสถานะโต๊ะว่าง/ไม่ว่าง (Table Availability)" line="106">
+<kw name="Step Should Succeed">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-30T12:27:08.927353" level="INFO">เช็คโต๊ะ 1 และพบว่าว่าง</msg>
+<arg>${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.927222" elapsed="0.000260"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.927665" elapsed="0.000206"/>
+</kw>
+<arg>เช็คโต๊ะ 1 และพบว่าว่าง</arg>
+<status status="PASS" start="2025-09-30T12:27:08.926985" elapsed="0.001021"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.928338" elapsed="0.000210"/>
+</kw>
+<doc>UC10 - เช็คสถานะโต๊ะว่าง/ไม่ว่าง (Table Availability)</doc>
+<tag>Reservation</tag>
+<status status="PASS" start="2025-09-30T12:27:08.925685" elapsed="0.003267"/>
+</test>
+<test id="s1-t11" name="UC11 | เช็คอินลูกค้าตามเวลาจอง (Reservation Check-in)" line="112">
+<kw name="Step Should Succeed">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-30T12:27:08.934600" level="INFO">เช็คอินลูกค้า ID 1 ที่โต๊ะ 1 เวลา 18:00</msg>
+<arg>${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.934208" elapsed="0.001173"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.936450" elapsed="0.000303"/>
+</kw>
+<arg>เช็คอินลูกค้า ID 1 ที่โต๊ะ 1 เวลา 18:00</arg>
+<status status="PASS" start="2025-09-30T12:27:08.933646" elapsed="0.037400"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.971645" elapsed="0.000503"/>
+</kw>
+<doc>UC11 - เช็คอินลูกค้าตามเวลาจอง (Reservation Check-in)</doc>
+<tag>Reservation</tag>
+<status status="PASS" start="2025-09-30T12:27:08.931494" elapsed="0.044714"/>
+</test>
+<test id="s1-t12" name="UC12 | ย้ายโต๊ะ (Move Table)" line="118">
+<kw name="Step Should Succeed">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-30T12:27:08.980367" level="INFO">ย้ายจากโต๊ะ 1 ไปโต๊ะ 2 สำหรับลูกค้า ID 1</msg>
+<arg>${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.980107" elapsed="0.000498"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.980840" elapsed="0.000239"/>
+</kw>
+<arg>ย้ายจากโต๊ะ 1 ไปโต๊ะ 2 สำหรับลูกค้า ID 1</arg>
+<status status="PASS" start="2025-09-30T12:27:08.979582" elapsed="0.001637"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.981605" elapsed="0.000176"/>
+</kw>
+<doc>UC12 - ย้ายโต๊ะ (Move Table)</doc>
+<tag>Reservation</tag>
+<status status="PASS" start="2025-09-30T12:27:08.978227" elapsed="0.003890"/>
+</test>
+<test id="s1-t13" name="UC13 | รวมบิล/แยกบิลตามโต๊ะ (Merge/Split Bills)" line="124">
+<kw name="Step Should Succeed">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-30T12:27:08.986456" level="INFO">รวมบิลโต๊ะ 1 และ 2 เป็นบิลเดียว</msg>
+<arg>${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.986124" elapsed="0.001200"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.987880" elapsed="0.000444"/>
+</kw>
+<arg>รวมบิลโต๊ะ 1 และ 2 เป็นบิลเดียว</arg>
+<status status="PASS" start="2025-09-30T12:27:08.985431" elapsed="0.003069"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.989012" elapsed="0.000278"/>
+</kw>
+<doc>UC13 - รวมบิลโต๊ะ 1 และ 2 เป็นบิลเดียว (Merge/Split Bills)</doc>
+<tag>Reservation</tag>
+<status status="PASS" start="2025-09-30T12:27:08.982992" elapsed="0.006699"/>
+</test>
+<test id="s1-t14" name="UC14 | เพิ่มเมนูลงตะกร้า (Add Menu To Cart)" line="130">
+<kw name="Step Should Succeed">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-30T12:27:08.992682" level="INFO">เพิ่มเนื้อวัว จำนวน 3 ชิ้นลงตะกร้าสำหรับโต๊ะ 1</msg>
+<arg>${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.992443" elapsed="0.000398"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.993000" elapsed="0.000179"/>
+</kw>
+<arg>เพิ่มเนื้อวัว จำนวน 3 ชิ้นลงตะกร้าสำหรับโต๊ะ 1</arg>
+<status status="PASS" start="2025-09-30T12:27:08.991968" elapsed="0.001327"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.993685" elapsed="0.000158"/>
+</kw>
+<doc>UC14 - เพิ่มเมนูลงตะกร้า (Add Menu To Cart)</doc>
+<tag>Ordering</tag>
+<status status="PASS" start="2025-09-30T12:27:08.990774" elapsed="0.003392"/>
+</test>
+<test id="s1-t15" name="UC15 | แก้ไขจำนวนเมนู (Update Quantity)" line="136">
+<kw name="Update">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-30T12:27:08.997466" level="INFO">อัปเดต จำนวนเมนู ID 301: {'quantity': 5}</msg>
+<arg>อัปเดต ${entity} ID ${id}: ${new_details}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.997212" elapsed="0.000414"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-09-30T12:27:08.998169" level="INFO">${_last_update_entity} = จำนวนเมนู</msg>
+<arg>${_last_update_entity}</arg>
+<arg>${entity}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.997783" elapsed="0.000514"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-09-30T12:27:08.998566" level="INFO">${_last_update_id} = 301</msg>
+<arg>${_last_update_id}</arg>
+<arg>${id}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.998421" elapsed="0.000224"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-09-30T12:27:08.998918" level="INFO">${_last_update_details} = {'quantity': 5}</msg>
+<arg>${_last_update_details}</arg>
+<arg>${new_details}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.998747" elapsed="0.000254"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.999095" elapsed="0.000120"/>
+</kw>
+<arg>จำนวนเมนู</arg>
+<arg>301</arg>
+<arg>{'quantity': 5}</arg>
+<status status="PASS" start="2025-09-30T12:27:08.996862" elapsed="0.002428"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:08.999630" elapsed="0.000427"/>
+</kw>
+<doc>UC15 - แก้ไขจำนวนเมนู (Update Quantity)</doc>
+<tag>Ordering</tag>
+<status status="PASS" start="2025-09-30T12:27:08.995665" elapsed="0.015943"/>
+</test>
+<test id="s1-t16" name="UC16 | ลบเมนูจากตะกร้า (Remove From Cart)" line="142">
+<kw name="Delete">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-30T12:27:09.014593" level="INFO">ลบ เมนู ID 301</msg>
+<arg>ลบ ${entity} ID ${id}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.014441" elapsed="0.000280"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-09-30T12:27:09.015008" level="INFO">${_last_delete_entity} = เมนู</msg>
+<arg>${_last_delete_entity}</arg>
+<arg>${entity}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.014841" elapsed="0.000247"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-09-30T12:27:09.015327" level="INFO">${_last_delete_id} = 301</msg>
+<arg>${_last_delete_id}</arg>
+<arg>${id}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.015186" elapsed="0.000211"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.015487" elapsed="0.000126"/>
+</kw>
+<arg>เมนู</arg>
+<arg>301</arg>
+<status status="PASS" start="2025-09-30T12:27:09.014163" elapsed="0.001524"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.015977" elapsed="0.000209"/>
+</kw>
+<doc>UC16 - ลบเมนูจากตะกร้า (Remove From Cart)</doc>
+<tag>Ordering</tag>
+<status status="PASS" start="2025-09-30T12:27:09.012829" elapsed="0.003680"/>
+</test>
+<test id="s1-t17" name="UC17 | ส่งออเดอร์เข้าครัว (Submit Order To Kitchen)" line="148">
+<kw name="Step Should Succeed">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-30T12:27:09.022870" level="INFO">ส่งออเดอร์ ID 101 เข้าครัว</msg>
+<arg>${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.022442" elapsed="0.000682"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.023336" elapsed="0.000251"/>
+</kw>
+<arg>ส่งออเดอร์ ID 101 เข้าครัว</arg>
+<status status="PASS" start="2025-09-30T12:27:09.021466" elapsed="0.002280"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.024283" elapsed="0.000238"/>
+</kw>
+<doc>UC17 - ส่งออเดอร์เข้าครัว (Submit Order To Kitchen)</doc>
+<tag>Ordering</tag>
+<status status="PASS" start="2025-09-30T12:27:09.018600" elapsed="0.006372"/>
+</test>
+<test id="s1-t18" name="UC18 | ติดตามสถานะออเดอร์ (Track Order Status)" line="154">
+<kw name="Step Should Succeed">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-30T12:27:09.028857" level="INFO">เช็คสถานะออเดอร์ ID 101 และพบว่ากำลังทำ</msg>
+<arg>${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.028604" elapsed="0.000406"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.029209" elapsed="0.000298"/>
+</kw>
+<arg>เช็คสถานะออเดอร์ ID 101 และพบว่ากำลังทำ</arg>
+<status status="PASS" start="2025-09-30T12:27:09.027948" elapsed="0.001723"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.030080" elapsed="0.000212"/>
+</kw>
+<doc>UC18 - ติดตามสถานะออเดอร์ (Track Order Status)</doc>
+<tag>Ordering</tag>
+<status status="PASS" start="2025-09-30T12:27:09.026379" elapsed="0.004372"/>
+</test>
+<test id="s1-t19" name="UC19 | ยกเลิกออเดอร์ก่อนทำ (Cancel Order Before Cook)" line="160">
+<kw name="Step Should Succeed">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-30T12:27:09.035034" level="INFO">ยกเลิกออเดอร์ ID 101 ก่อนเริ่มทำ</msg>
+<arg>${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.034322" elapsed="0.001115"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.035881" elapsed="0.000302"/>
+</kw>
+<arg>ยกเลิกออเดอร์ ID 101 ก่อนเริ่มทำ</arg>
+<status status="PASS" start="2025-09-30T12:27:09.033554" elapsed="0.002793"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.036836" elapsed="0.000256"/>
+</kw>
+<doc>UC19 - ยกเลิกออเดอร์ก่อนทำ (Cancel Order Before Cook)</doc>
+<tag>Ordering</tag>
+<status status="PASS" start="2025-09-30T12:27:09.032037" elapsed="0.005499"/>
+</test>
+<test id="s1-t20" name="UC20 | คำนวณโปรโมชันอัตโนมัติ (Auto Promotion Calc)" line="166">
+<kw name="Calculate">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-30T12:27:09.042553" level="INFO">คำนวณ โปรโมชัน ด้วย 500 * 0.9</msg>
+<arg>คำนวณ ${what} ด้วย ${params}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.042225" elapsed="0.000601"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-09-30T12:27:09.044162" level="INFO">${result} = 450.0</msg>
+<var>${result}</var>
+<arg>${params}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.043282" elapsed="0.001340"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\nผลลัพธ์(${what}) = ${result}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.044916" elapsed="0.000621"/>
+</kw>
+<return>
+<value>${result}</value>
+<status status="PASS" start="2025-09-30T12:27:09.045864" elapsed="0.000255"/>
+</return>
+<msg time="2025-09-30T12:27:09.046361" level="INFO">${after_discount} = 450.0</msg>
+<var>${after_discount}</var>
+<arg>โปรโมชัน</arg>
+<arg>500 * 0.9</arg>
+<status status="PASS" start="2025-09-30T12:27:09.041026" elapsed="0.005445"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.046868" elapsed="0.000229"/>
+</kw>
+<doc>UC20 - คำนวณโปรโมชันอัตโนมัติ (Auto Promotion Calc)</doc>
+<tag>Ordering</tag>
+<status status="PASS" start="2025-09-30T12:27:09.038736" elapsed="0.008821"/>
+</test>
+<test id="s1-t21" name="UC21 | ปิดบิลและชำระเงิน (Close Bill &amp; Payment)" line="172">
+<kw name="Step Should Succeed">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-30T12:27:09.051359" level="INFO">ปิดบิลโต๊ะ 1 ยอดรวม 500 บาท ชำระด้วยเงินสด</msg>
+<arg>${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.050789" elapsed="0.002290"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.054945" elapsed="0.003013"/>
+</kw>
+<arg>ปิดบิลโต๊ะ 1 ยอดรวม 500 บาท ชำระด้วยเงินสด</arg>
+<status status="PASS" start="2025-09-30T12:27:09.050337" elapsed="0.008250"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.059573" elapsed="0.000388"/>
+</kw>
+<doc>UC21 - ปิดบิลและชำระเงิน (Close Bill &amp; Payment)</doc>
+<tag>Ordering</tag>
+<status status="PASS" start="2025-09-30T12:27:09.048781" elapsed="0.011691"/>
+</test>
+<test id="s1-t22" name="UC22 | คืนเงินบางส่วน/ทั้งหมด (Refund)" line="178">
+<kw name="Step Should Succeed">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-30T12:27:09.063733" level="INFO">คืนเงิน 200 บาท จากบิลโต๊ะ 1</msg>
+<arg>${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.063555" elapsed="0.000310"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.063991" elapsed="0.000135"/>
+</kw>
+<arg>คืนเงิน 200 บาท จากบิลโต๊ะ 1</arg>
+<status status="PASS" start="2025-09-30T12:27:09.063190" elapsed="0.001021"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.064628" elapsed="0.000313"/>
+</kw>
+<doc>UC22 - คืนเงินบางส่วน/ทั้งหมด (Refund)</doc>
+<tag>Ordering</tag>
+<status status="PASS" start="2025-09-30T12:27:09.061496" elapsed="0.003830"/>
+</test>
+<test id="s1-t23" name="UC23 | สร้างบัญชีพนักงาน (Employee Create)" line="184">
+<kw name="Create">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-30T12:27:09.071176" level="INFO">สร้าง พนักงาน: {'id': 202, 'name': 'สมศรี ยิ้มแย้ม', 'role': 'พนักงานเสิร์ฟ'}</msg>
+<arg>สร้าง ${entity}: ${details}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.068916" elapsed="0.003547"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-09-30T12:27:09.073076" level="INFO">${_last_create_entity} = พนักงาน</msg>
+<arg>${_last_create_entity}</arg>
+<arg>${entity}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.072720" elapsed="0.000635"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-09-30T12:27:09.073743" level="INFO">${_last_create_details} = {'id': 202, 'name': 'สมศรี ยิ้มแย้ม', 'role': 'พนักงานเสิร์ฟ'}</msg>
+<arg>${_last_create_details}</arg>
+<arg>${details}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.073528" elapsed="0.000326"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.073961" elapsed="0.000147"/>
+</kw>
+<arg>พนักงาน</arg>
+<arg>{'id': 202, 'name': 'สมศรี ยิ้มแย้ม', 'role': 'พนักงานเสิร์ฟ'}</arg>
+<status status="PASS" start="2025-09-30T12:27:09.068018" elapsed="0.006191"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.074708" elapsed="0.000209"/>
+</kw>
+<doc>UC23 - สร้างบัญชีพนักงาน (Employee Create)</doc>
+<tag>Employee</tag>
+<status status="PASS" start="2025-09-30T12:27:09.066182" elapsed="0.009299"/>
+</test>
+<test id="s1-t24" name="UC24 | กำหนดสิทธิ์ตามบทบาท (RBAC)" line="190">
+<kw name="Step Should Succeed">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-30T12:27:09.078629" level="INFO">กำหนดสิทธิ์แคชเชียร์ให้พนักงาน ID 201</msg>
+<arg>${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.078364" elapsed="0.000466"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.079033" elapsed="0.000290"/>
+</kw>
+<arg>กำหนดสิทธิ์แคชเชียร์ให้พนักงาน ID 201</arg>
+<status status="PASS" start="2025-09-30T12:27:09.077910" elapsed="0.001598"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.079879" elapsed="0.000216"/>
+</kw>
+<doc>UC24 - กำหนดสิทธิ์ตามบทบาท (RBAC)</doc>
+<tag>Employee</tag>
+<status status="PASS" start="2025-09-30T12:27:09.076300" elapsed="0.004124"/>
+</test>
+<test id="s1-t25" name="UC25 | เปิด-ปิดกะทำงาน (Shift Open/Close)" line="196">
+<kw name="Step Should Succeed">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-30T12:27:09.084132" level="INFO">เปิดกะทำงานสำหรับพนักงาน ID 201 เวลา 09:00</msg>
+<arg>${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.083853" elapsed="0.000777"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.084862" elapsed="0.000298"/>
+</kw>
+<arg>เปิดกะทำงานสำหรับพนักงาน ID 201 เวลา 09:00</arg>
+<status status="PASS" start="2025-09-30T12:27:09.083330" elapsed="0.002245"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.086173" elapsed="0.000274"/>
+</kw>
+<doc>UC25 - เปิด-ปิดกะทำงาน (Shift Open/Close)</doc>
+<tag>Employee</tag>
+<status status="PASS" start="2025-09-30T12:27:09.081487" elapsed="0.006162"/>
+</test>
+<test id="s1-t26" name="UC26 | บันทึกประสิทธิภาพการเสิร์ฟ (KPI Log)" line="202">
+<kw name="Step Should Succeed">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-30T12:27:09.092184" level="INFO">บันทึก KPI พนักงาน ID 202: เสิร์ฟ 10 โต๊ะ</msg>
+<arg>${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.091857" elapsed="0.000575"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.092636" elapsed="0.000208"/>
+</kw>
+<arg>บันทึก KPI พนักงาน ID 202: เสิร์ฟ 10 โต๊ะ</arg>
+<status status="PASS" start="2025-09-30T12:27:09.091190" elapsed="0.001794"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.093827" elapsed="0.000301"/>
+</kw>
+<doc>UC26 - บันทึกประสิทธิภาพการเสิร์ฟ (KPI Log)</doc>
+<tag>Employee</tag>
+<status status="PASS" start="2025-09-30T12:27:09.088415" elapsed="0.006213"/>
+</test>
+<test id="s1-t27" name="UC27 | ปิดบัญชีรายวันของแคชเชียร์ (Daily Cashout)" line="208">
+<kw name="Step Should Succeed">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-30T12:27:09.098870" level="INFO">ปิดบัญชีรายวัน ยอดรวม 5000 บาท</msg>
+<arg>${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.098601" elapsed="0.000523"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.099380" elapsed="0.000256"/>
+</kw>
+<arg>ปิดบัญชีรายวัน ยอดรวม 5000 บาท</arg>
+<status status="PASS" start="2025-09-30T12:27:09.098085" elapsed="0.001699"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.100337" elapsed="0.000243"/>
+</kw>
+<doc>UC27 - ปิดบัญชีรายวันของแคชเชียร์ (Daily Cashout)</doc>
+<tag>Employee</tag>
+<status status="PASS" start="2025-09-30T12:27:09.095796" elapsed="0.005765"/>
+</test>
+<test id="s1-t28" name="UC28 | เพิ่มเมนูใหม่ (Menu Create)" line="214">
+<kw name="Create">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-30T12:27:09.105223" level="INFO">สร้าง เมนู: {'id': 302, 'name': 'กุ้งสด', 'price': 200, 'stock': 30}</msg>
+<arg>สร้าง ${entity}: ${details}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.104937" elapsed="0.000707"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-09-30T12:27:09.106205" level="INFO">${_last_create_entity} = เมนู</msg>
+<arg>${_last_create_entity}</arg>
+<arg>${entity}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.105893" elapsed="0.000480"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-09-30T12:27:09.106867" level="INFO">${_last_create_details} = {'id': 302, 'name': 'กุ้งสด', 'price': 200, 'stock': 30}</msg>
+<arg>${_last_create_details}</arg>
+<arg>${details}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.106579" elapsed="0.000432"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.107184" elapsed="0.000213"/>
+</kw>
+<arg>เมนู</arg>
+<arg>{'id': 302, 'name': 'กุ้งสด', 'price': 200, 'stock': 30}</arg>
+<status status="PASS" start="2025-09-30T12:27:09.104433" elapsed="0.003111"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.108038" elapsed="0.000240"/>
+</kw>
+<doc>UC28 - เพิ่มเมนูใหม่ (Menu Create)</doc>
+<tag>Menu</tag>
+<status status="PASS" start="2025-09-30T12:27:09.103177" elapsed="0.005481"/>
+</test>
+<test id="s1-t29" name="UC29 | แก้ไขเมนู/ราคา (Menu Update)" line="220">
+<kw name="Update">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-30T12:27:09.112090" level="INFO">อัปเดต เมนู ID 301: {'id': 301, 'name': 'เนื้อวัวพรีเมียม', 'price': 180, 'stock': 45}</msg>
+<arg>อัปเดต ${entity} ID ${id}: ${new_details}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.111760" elapsed="0.000630"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-09-30T12:27:09.113038" level="INFO">${_last_update_entity} = เมนู</msg>
+<arg>${_last_update_entity}</arg>
+<arg>${entity}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.112723" elapsed="0.000451"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-09-30T12:27:09.113469" level="INFO">${_last_update_id} = 301</msg>
+<arg>${_last_update_id}</arg>
+<arg>${id}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.113304" elapsed="0.000787"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-09-30T12:27:09.114523" level="INFO">${_last_update_details} = {'id': 301, 'name': 'เนื้อวัวพรีเมียม', 'price': 180, 'stock': 45}</msg>
+<arg>${_last_update_details}</arg>
+<arg>${new_details}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.114291" elapsed="0.000381"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.114849" elapsed="0.000195"/>
+</kw>
+<arg>เมนู</arg>
+<arg>301</arg>
+<arg>{'id': 301, 'name': 'เนื้อวัวพรีเมียม', 'price': 180, 'stock': 45}</arg>
+<status status="PASS" start="2025-09-30T12:27:09.111270" elapsed="0.003917"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.116029" elapsed="0.000799"/>
+</kw>
+<doc>UC29 - แก้ไขเมนู/ราคา (Menu Update)</doc>
+<tag>Menu</tag>
+<status status="PASS" start="2025-09-30T12:27:09.109753" elapsed="0.009172"/>
+</test>
+<test id="s1-t30" name="UC30 | ปิด/เปิดการขายเมนู (Menu Availability Toggle)" line="226">
+<kw name="Step Should Succeed">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-30T12:27:09.126124" level="INFO">เปิดการขายเมนู ID 302</msg>
+<arg>${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.125931" elapsed="0.000353"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.126681" elapsed="0.000250"/>
+</kw>
+<arg>เปิดการขายเมนู ID 302</arg>
+<status status="PASS" start="2025-09-30T12:27:09.125499" elapsed="0.001558"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.127498" elapsed="0.000244"/>
+</kw>
+<doc>UC30 - ปิด/เปิดการขายเมนู (Menu Availability Toggle)</doc>
+<tag>Menu</tag>
+<status status="PASS" start="2025-09-30T12:27:09.123851" elapsed="0.004291"/>
+</test>
+<test id="s1-t31" name="UC31 | จัดการวัตถุดิบและสต็อก (Ingredient &amp; Stock)" line="232">
+<kw name="Step Should Succeed">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-30T12:27:09.132233" level="INFO">อัปเดตสต็อกเนื้อวัวเหลือ 40 ชิ้น</msg>
+<arg>${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.131967" elapsed="0.000470"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.132639" elapsed="0.000253"/>
+</kw>
+<arg>อัปเดตสต็อกเนื้อวัวเหลือ 40 ชิ้น</arg>
+<status status="PASS" start="2025-09-30T12:27:09.131457" elapsed="0.001586"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.133883" elapsed="0.000558"/>
+</kw>
+<doc>UC31 - จัดการวัตถุดิบและสต็อก (Ingredient &amp; Stock)</doc>
+<tag>Menu</tag>
+<status status="PASS" start="2025-09-30T12:27:09.129476" elapsed="0.009974"/>
+</test>
+<test id="s1-t32" name="UC32 | ส่งออกเมนูเป็นไฟล์ (Export Menu CSV)" line="238">
+<kw name="Step Should Succeed">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-30T12:27:09.144468" level="INFO">ส่งออกเมนูทั้งหมดเป็นไฟล์ CSV</msg>
+<arg>${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.144153" elapsed="0.000586"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.144974" elapsed="0.000172"/>
+</kw>
+<arg>ส่งออกเมนูทั้งหมดเป็นไฟล์ CSV</arg>
+<status status="PASS" start="2025-09-30T12:27:09.143570" elapsed="0.001676"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.145746" elapsed="0.000292"/>
+</kw>
+<doc>UC32 - ส่งออกเมนูเป็นไฟล์ (Export Menu CSV)</doc>
+<tag>Menu</tag>
+<status status="PASS" start="2025-09-30T12:27:09.141747" elapsed="0.030271"/>
+</test>
+<kw name="Log To Console" owner="BuiltIn" type="TEARDOWN">
+<arg>\nสิ้นสุดการทดสอบชุด: Shabu Buffet Management ()\n</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-09-30T12:27:09.193854" elapsed="0.000905"/>
+</kw>
+<doc>ชุดทดสอบระบบบริหารจัดการร้านชาบูบุฟเฟต์ () — 32 Use Cases</doc>
+<status status="PASS" start="2025-09-30T12:27:08.660656" elapsed="0.534366"/>
+</suite>
+<statistics>
+<total>
+<stat pass="32" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="6" fail="0" skip="0">Customer</stat>
+<stat pass="5" fail="0" skip="0">Employee</stat>
+<stat pass="5" fail="0" skip="0">Menu</stat>
+<stat pass="9" fail="0" skip="0">Ordering</stat>
+<stat pass="7" fail="0" skip="0">Reservation</stat>
+</tag>
+<suite>
+<stat pass="32" fail="0" skip="0" id="s1" name="Shabu Usecases">Shabu Usecases</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
