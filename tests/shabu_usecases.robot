@@ -3,8 +3,8 @@ Documentation     ชุดทดสอบระบบบริหารจั�
 Resource          ../../resources/thai_keywords.resource
 Library           OperatingSystem
 Library           Collections
-Suite Setup       Log To Console    \nเริ่มรันทดสอบชุด: Shabu Buffet Management ()\n
-Suite Teardown    Log To Console    \nสิ้นสุดการทดสอบชุด: Shabu Buffet Management ()\n
+Suite Setup       Log To Console    \n เริ่มรันทดสอบชุด: Shabu Buffet Management ()\n
+Suite Teardown    Log To Console    \n สิ้นสุดการทดสอบชุด: Shabu Buffet Management ()\n
 
 *** Variables ***
 ${DUMMY_DB}       {'customers': [{'id': 1, 'name': 'สมชาย ไทยแท้', 'phone': '0812345678', 'email': 'somchai@example.com'}],
