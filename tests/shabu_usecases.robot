@@ -3,7 +3,7 @@ Documentation     ชุดทดสอบระบบบริหารจั�
 Resource          ../../resources/thai_keywords.resource
 Library           OperatingSystem
 Library           Collections
-Suite Setup       Log To Console    \n เริ่มรันทดสอบชุด: Shabu Buffet Management ()\n
+Suite Setup       Log To Console    \n เริ่มรันทดสอบชุด: Shabu Buffet Management () \n
 Suite Teardown    Log To Console    \n สิ้นสุดการทดสอบชุด: Shabu Buffet Management ()\n
 
 *** Variables ***
