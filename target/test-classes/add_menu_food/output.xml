@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.9 on win32)" generated="2025-10-19T23:09:17.979045" rpa="false" schemaversion="5">
+<suite id="s1" name="Add Menu Food" source="C:\ShabuProject\target\test-classes\add_menu_food\add_menu_food.robot">
+<test id="s1-t1" name="Verify Add Menu Page Loads Successfully" line="33">
+<kw name="Open Browser With Options" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-19T23:09:18.751315" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002106B50E7B0&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>modules=sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-19T23:09:18.750301" elapsed="0.001225"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-19T23:09:18.752002" elapsed="0.000523"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gcm</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-19T23:09:18.752836" elapsed="0.000305"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-10-19T23:09:18.754064" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8080/Zproject_shabu2/gotoAddMenu'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-10-19T23:09:18.753458" elapsed="5.997012"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-10-19T23:09:24.751047" elapsed="0.079979"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-10-19T23:09:24.831373" elapsed="0.002684"/>
+</kw>
+<status status="PASS" start="2025-10-19T23:09:18.748326" elapsed="6.086087"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>css=button.btn-primary</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-19T23:09:24.835417" elapsed="0.079450"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-10-19T23:09:24.981380" level="INFO">Current page contains text 'เพิ่มเมนูอาหาร'.</msg>
+<arg>เพิ่มเมนูอาหาร</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-10-19T23:09:24.915675" elapsed="0.065953"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-10-19T23:09:24.982513" elapsed="2.267714"/>
+</kw>
+<status status="PASS" start="2025-10-19T23:09:18.746137" elapsed="8.504594"/>
+</test>
+<test id="s1-t2" name="Test Successful Menu Addition" line="37">
+<kw name="Open Browser With Options" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-19T23:09:27.254837" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002106B59D310&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>modules=sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-19T23:09:27.253924" elapsed="0.001021"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-19T23:09:27.255299" elapsed="0.000408"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gcm</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-19T23:09:27.256009" elapsed="0.000302"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-10-19T23:09:27.257200" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8080/Zproject_shabu2/gotoAddMenu'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-10-19T23:09:27.256605" elapsed="2.592333"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-10-19T23:09:29.849470" elapsed="0.053036"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-10-19T23:09:29.902981" elapsed="0.002553"/>
+</kw>
+<status status="PASS" start="2025-10-19T23:09:27.253013" elapsed="2.652789"/>
+</kw>
+<kw name="Fill Add Menu Form">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=input#foodname</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T23:09:29.907645" elapsed="0.058573"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-19T23:09:29.967260" level="INFO">Typing text 'ชาบูหมู' into text field 'css=input#foodname'.</msg>
+<arg>css=input#foodname</arg>
+<arg>${food_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T23:09:29.966631" elapsed="0.246200"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-19T23:09:30.214165" level="INFO">Typing text '299' into text field 'css=input#price'.</msg>
+<arg>css=input#price</arg>
+<arg>${price}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T23:09:30.213297" elapsed="0.165094"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-19T23:09:30.379501" level="INFO">Typing text 'https://example.com/food.jpg' into text field 'css=input#url'.</msg>
+<arg>css=input#url</arg>
+<arg>${image_url}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T23:09:30.378838" elapsed="0.207381"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-10-19T23:09:30.587542" level="INFO">Selecting options from selection list 'css=select#type' by value ชาบู.</msg>
+<arg>css=select#type</arg>
+<arg>${food_type}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-10-19T23:09:30.586811" elapsed="0.091672"/>
+</kw>
+<arg>${FOOD_NAME}</arg>
+<arg>${PRICE}</arg>
+<arg>${IMAGE_URL}</arg>
+<arg>${FOOD_TYPE}</arg>
+<status status="PASS" start="2025-10-19T23:09:29.906536" elapsed="0.772244"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=button.btn-primary</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T23:09:30.679460" elapsed="0.034653"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>css=button.btn-primary</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-10-19T23:09:30.714686" elapsed="0.032959"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-19T23:09:30.748822" level="INFO">Clicking button 'css=button.btn-primary'.</msg>
+<arg>css=button.btn-primary</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T23:09:30.748283" elapsed="0.137174"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=div.success-message</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T23:09:30.886077" elapsed="0.849408"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2025-10-19T23:09:31.781456" level="INFO">Element 'css=div.success-message' contains text 'ทำรายการสำเร็จ'.</msg>
+<arg>css=div.success-message</arg>
+<arg>ทำรายการสำเร็จ</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2025-10-19T23:09:31.736407" elapsed="0.045328"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-10-19T23:09:31.782865" elapsed="2.278052"/>
+</kw>
+<status status="PASS" start="2025-10-19T23:09:27.251815" elapsed="6.809598"/>
+</test>
+<test id="s1-t3" name="Test Missing Food Name" line="45">
+<kw name="Open Browser With Options" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-19T23:09:34.065745" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002106B59C2D0&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>modules=sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-19T23:09:34.064810" elapsed="0.001053"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-19T23:09:34.066223" elapsed="0.000344"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gcm</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-19T23:09:34.066781" elapsed="0.000255"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-10-19T23:09:34.067796" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8080/Zproject_shabu2/gotoAddMenu'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-10-19T23:09:34.067301" elapsed="2.290710"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-10-19T23:09:36.358455" elapsed="0.055919"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-10-19T23:09:36.414815" elapsed="0.002565"/>
+</kw>
+<status status="PASS" start="2025-10-19T23:09:34.063920" elapsed="2.353756"/>
+</kw>
+<kw name="Fill Add Menu Form">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=input#foodname</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T23:09:36.419832" elapsed="0.048409"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-19T23:09:36.469376" level="INFO">Typing text '' into text field 'css=input#foodname'.</msg>
+<arg>css=input#foodname</arg>
+<arg>${food_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T23:09:36.468621" elapsed="0.189305"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-19T23:09:36.659312" level="INFO">Typing text '299' into text field 'css=input#price'.</msg>
+<arg>css=input#price</arg>
+<arg>${price}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T23:09:36.658491" elapsed="0.151376"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-19T23:09:36.810942" level="INFO">Typing text 'https://example.com/food.jpg' into text field 'css=input#url'.</msg>
+<arg>css=input#url</arg>
+<arg>${image_url}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T23:09:36.810273" elapsed="0.198090"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-10-19T23:09:37.009644" level="INFO">Selecting options from selection list 'css=select#type' by value ชาบู.</msg>
+<arg>css=select#type</arg>
+<arg>${food_type}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-10-19T23:09:37.008956" elapsed="0.080203"/>
+</kw>
+<arg>${EMPTY}</arg>
+<arg>${PRICE}</arg>
+<arg>${IMAGE_URL}</arg>
+<arg>${FOOD_TYPE}</arg>
+<status status="PASS" start="2025-10-19T23:09:36.418386" elapsed="0.671000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=button.btn-primary</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T23:09:37.089899" elapsed="0.027413"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-19T23:09:37.118366" level="INFO">Clicking button 'css=button.btn-primary'.</msg>
+<arg>css=button.btn-primary</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T23:09:37.117867" elapsed="0.218293"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-19T23:09:37.368279" level="INFO">Current page contains element 'css=input#foodname:invalid'.</msg>
+<arg>css=input#foodname:invalid</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-10-19T23:09:37.336721" elapsed="0.031826"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-10-19T23:09:37.370549" elapsed="2.291315"/>
+</kw>
+<status status="PASS" start="2025-10-19T23:09:34.062733" elapsed="5.599569"/>
+</test>
+<test id="s1-t4" name="Test Missing Price" line="51">
+<kw name="Open Browser With Options" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-19T23:09:39.665574" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002106B5D8510&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>modules=sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-19T23:09:39.664966" elapsed="0.000685"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-19T23:09:39.665908" elapsed="0.000253"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gcm</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-19T23:09:39.666345" elapsed="0.000263"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-10-19T23:09:39.667397" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8080/Zproject_shabu2/gotoAddMenu'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-10-19T23:09:39.666859" elapsed="2.315503"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-10-19T23:09:41.982817" elapsed="0.050551"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-10-19T23:09:42.033708" elapsed="0.002482"/>
+</kw>
+<status status="PASS" start="2025-10-19T23:09:39.664359" elapsed="2.372132"/>
+</kw>
+<kw name="Fill Add Menu Form">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=input#foodname</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T23:09:42.038445" elapsed="0.048329"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-19T23:09:42.087907" level="INFO">Typing text 'ชาบูหมู' into text field 'css=input#foodname'.</msg>
+<arg>css=input#foodname</arg>
+<arg>${food_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T23:09:42.087259" elapsed="0.246254"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-19T23:09:42.334733" level="INFO">Typing text '' into text field 'css=input#price'.</msg>
+<arg>css=input#price</arg>
+<arg>${price}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T23:09:42.333939" elapsed="0.167552"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-19T23:09:42.502784" level="INFO">Typing text 'https://example.com/food.jpg' into text field 'css=input#url'.</msg>
+<arg>css=input#url</arg>
+<arg>${image_url}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T23:09:42.502009" elapsed="0.243210"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-10-19T23:09:42.746402" level="INFO">Selecting options from selection list 'css=select#type' by value ชาบู.</msg>
+<arg>css=select#type</arg>
+<arg>${food_type}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-10-19T23:09:42.745762" elapsed="0.085639"/>
+</kw>
+<arg>${FOOD_NAME}</arg>
+<arg>${EMPTY}</arg>
+<arg>${IMAGE_URL}</arg>
+<arg>${FOOD_TYPE}</arg>
+<status status="PASS" start="2025-10-19T23:09:42.037276" elapsed="0.794457"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=button.btn-primary</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T23:09:42.832340" elapsed="0.037096"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-19T23:09:42.870700" level="INFO">Clicking button 'css=button.btn-primary'.</msg>
+<arg>css=button.btn-primary</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T23:09:42.870159" elapsed="0.208554"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-19T23:09:43.107552" level="INFO">Current page contains element 'css=input#price:invalid'.</msg>
+<arg>css=input#price:invalid</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-10-19T23:09:43.079401" elapsed="0.028396"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-10-19T23:09:43.108586" elapsed="2.248485"/>
+</kw>
+<status status="PASS" start="2025-10-19T23:09:39.663319" elapsed="5.694141"/>
+</test>
+<test id="s1-t5" name="Test Missing Image URL" line="57">
+<kw name="Open Browser With Options" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-19T23:09:45.362391" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002106B49AFD0&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>modules=sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-19T23:09:45.360173" elapsed="0.002322"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-19T23:09:45.362856" elapsed="0.000360"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gcm</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-19T23:09:45.363439" elapsed="0.000284"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-10-19T23:09:45.364552" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8080/Zproject_shabu2/gotoAddMenu'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-10-19T23:09:45.363999" elapsed="2.835953"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-10-19T23:09:48.200469" elapsed="0.061664"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-10-19T23:09:48.262634" elapsed="0.002592"/>
+</kw>
+<status status="PASS" start="2025-10-19T23:09:45.359577" elapsed="2.905936"/>
+</kw>
+<kw name="Fill Add Menu Form">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=input#foodname</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T23:09:48.267992" elapsed="0.077791"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-19T23:09:48.346609" level="INFO">Typing text 'ชาบูหมู' into text field 'css=input#foodname'.</msg>
+<arg>css=input#foodname</arg>
+<arg>${food_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T23:09:48.346107" elapsed="0.208306"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-19T23:09:48.555655" level="INFO">Typing text '299' into text field 'css=input#price'.</msg>
+<arg>css=input#price</arg>
+<arg>${price}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T23:09:48.554824" elapsed="0.153486"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-19T23:09:48.709260" level="INFO">Typing text '' into text field 'css=input#url'.</msg>
+<arg>css=input#url</arg>
+<arg>${image_url}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T23:09:48.708698" elapsed="0.155344"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-10-19T23:09:48.864959" level="INFO">Selecting options from selection list 'css=select#type' by value ชาบู.</msg>
+<arg>css=select#type</arg>
+<arg>${food_type}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-10-19T23:09:48.864405" elapsed="0.097338"/>
+</kw>
+<arg>${FOOD_NAME}</arg>
+<arg>${PRICE}</arg>
+<arg>${EMPTY}</arg>
+<arg>${FOOD_TYPE}</arg>
+<status status="PASS" start="2025-10-19T23:09:48.266443" elapsed="0.695586"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=button.btn-primary</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T23:09:48.962696" elapsed="0.039065"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-19T23:09:49.003252" level="INFO">Clicking button 'css=button.btn-primary'.</msg>
+<arg>css=button.btn-primary</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T23:09:49.002711" elapsed="0.193957"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-19T23:09:49.272123" level="INFO">Current page contains element 'css=input#url:invalid'.</msg>
+<arg>css=input#url:invalid</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-10-19T23:09:49.197332" elapsed="0.075015"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-10-19T23:09:49.273144" elapsed="2.271617"/>
+</kw>
+<status status="PASS" start="2025-10-19T23:09:45.358471" elapsed="6.186679"/>
+</test>
+<test id="s1-t6" name="Test Back To Main Page Navigation" line="63">
+<kw name="Open Browser With Options" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-19T23:09:51.548513" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002106B528DD0&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>modules=sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-19T23:09:51.547746" elapsed="0.000864"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-19T23:09:51.549030" elapsed="0.000450"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gcm</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-19T23:09:51.549799" elapsed="0.000444"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-10-19T23:09:51.551478" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8080/Zproject_shabu2/gotoAddMenu'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-10-19T23:09:51.550705" elapsed="2.384384"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-10-19T23:09:53.935580" elapsed="0.074633"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-10-19T23:09:54.010658" elapsed="0.002699"/>
+</kw>
+<status status="PASS" start="2025-10-19T23:09:51.547008" elapsed="2.466800"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-10-19T23:09:54.015318" level="INFO">Executing JavaScript:
+window.scrollTo(0, document.body.scrollHeight / 2);
+Without any arguments.</msg>
+<arg>window.scrollTo(0, document.body.scrollHeight / 2);</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-10-19T23:09:54.014356" elapsed="0.015064"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-19T23:09:55.031698" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-19T23:09:54.030881" elapsed="1.001041"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=a[href='ListAllMenuFood']</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T23:09:55.032449" elapsed="0.041226"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>css=a[href='ListAllMenuFood']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-10-19T23:09:55.074417" elapsed="0.296509"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>css=a[href='ListAllMenuFood']</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-10-19T23:09:55.371657" elapsed="0.050100"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-19T23:09:55.423229" level="INFO">Clicking element 'css=a[href='ListAllMenuFood']'.</msg>
+<arg>css=a[href='ListAllMenuFood']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T23:09:55.422543" elapsed="1.953107"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>รายการเมนูอาหาร</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-19T23:09:57.376718" elapsed="0.241240"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-10-19T23:09:57.618874" elapsed="2.939366"/>
+</kw>
+<status status="PASS" start="2025-10-19T23:09:51.545942" elapsed="9.012892"/>
+</test>
+<status status="PASS" start="2025-10-19T23:09:17.983642" elapsed="42.576641"/>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Add Menu Food" id="s1" pass="6" fail="0" skip="0">Add Menu Food</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-10-19T23:09:18.743907" level="ERROR">Error in file 'C:\ShabuProject\target\test-classes\add_menu_food\add_menu_food.robot' on line 13: Setting variable '${EMPTY}' failed: Recursive variable definition.</msg>
+</errors>
+</robot>

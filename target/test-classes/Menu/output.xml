@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.9 on win32)" generated="2025-10-20T00:41:10.111569" rpa="false" schemaversion="5">
+<suite id="s1" name="Menu" source="C:\ShabuProject\target\test-classes\Menu\menu.robot">
+<test id="s1-t1" name="Verify Menu Display Logic For Empty Menu" line="5">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-10-20T00:41:10.197562" level="INFO">${menu_items} = []</msg>
+<var>${menu_items}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-10-20T00:41:10.196957" elapsed="0.000714"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-10-20T00:41:10.198880" level="INFO">Length is 0.</msg>
+<msg time="2025-10-20T00:41:10.199145" level="INFO">${item_count} = 0</msg>
+<var>${item_count}</var>
+<arg>${menu_items}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-10-20T00:41:10.198372" elapsed="0.000860"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${item_count} == 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T00:41:10.199846" elapsed="0.001041"/>
+</kw>
+<doc>Test empty menu shows no items</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:41:10.194204" elapsed="0.007275"/>
+</test>
+<test id="s1-t2" name="Verify Single Menu Item Display" line="12">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T00:41:10.204437" level="INFO">&amp;{ITEM1} = { foodImage=img1.jpg | foodname=Pad Thai }</msg>
+<var>&amp;{ITEM1}</var>
+<arg>foodImage=img1.jpg</arg>
+<arg>foodname=Pad Thai</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T00:41:10.203487" elapsed="0.001080"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-10-20T00:41:10.205504" level="INFO">${menu_items} = [{'foodImage': 'img1.jpg', 'foodname': 'Pad Thai'}]</msg>
+<var>${menu_items}</var>
+<arg>${ITEM1}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-10-20T00:41:10.205097" elapsed="0.000454"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-10-20T00:41:10.206498" level="INFO">Length is 1.</msg>
+<msg time="2025-10-20T00:41:10.206717" level="INFO">${item_count} = 1</msg>
+<var>${item_count}</var>
+<arg>${menu_items}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-10-20T00:41:10.206096" elapsed="0.000679"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${item_count} == 1</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T00:41:10.207297" elapsed="0.000632"/>
+</kw>
+<doc>Test single item logic</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:41:10.202337" elapsed="0.006061"/>
+</test>
+<test id="s1-t3" name="Verify Multiple Menu Items Display" line="20">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T00:41:10.210740" level="INFO">&amp;{ITEM1} = { foodImage=img1.jpg | foodname=Pad Thai }</msg>
+<var>&amp;{ITEM1}</var>
+<arg>foodImage=img1.jpg</arg>
+<arg>foodname=Pad Thai</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T00:41:10.210043" elapsed="0.000794"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T00:41:10.211984" level="INFO">&amp;{ITEM2} = { foodImage=img2.jpg | foodname=Tom Yum }</msg>
+<var>&amp;{ITEM2}</var>
+<arg>foodImage=img2.jpg</arg>
+<arg>foodname=Tom Yum</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T00:41:10.211392" elapsed="0.000667"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-10-20T00:41:10.213109" level="INFO">${menu_items} = [{'foodImage': 'img1.jpg', 'foodname': 'Pad Thai'}, {'foodImage': 'img2.jpg', 'foodname': 'Tom Yum'}]</msg>
+<var>${menu_items}</var>
+<arg>${ITEM1}</arg>
+<arg>${ITEM2}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-10-20T00:41:10.212534" elapsed="0.000673"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-10-20T00:41:10.214255" level="INFO">Length is 2.</msg>
+<msg time="2025-10-20T00:41:10.214482" level="INFO">${item_count} = 2</msg>
+<var>${item_count}</var>
+<arg>${menu_items}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-10-20T00:41:10.213869" elapsed="0.000678"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${item_count} == 2</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T00:41:10.215096" elapsed="0.000575"/>
+</kw>
+<doc>Test multiple items logic</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:41:10.209104" elapsed="0.007235"/>
+</test>
+<test id="s1-t4" name="Verify Menu Item Properties" line="29">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T00:41:10.218701" level="INFO">&amp;{ITEM1} = { foodImage=img1.jpg | foodname=Pad Thai }</msg>
+<var>&amp;{ITEM1}</var>
+<arg>foodImage=img1.jpg</arg>
+<arg>foodname=Pad Thai</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T00:41:10.218129" elapsed="0.000663"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${ITEM1}</arg>
+<arg>foodImage</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-10-20T00:41:10.219431" elapsed="0.000468"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${ITEM1}</arg>
+<arg>foodname</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-10-20T00:41:10.220328" elapsed="0.000470"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${ITEM1}[foodname]</arg>
+<arg>Pad Thai</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T00:41:10.221283" elapsed="0.000407"/>
+</kw>
+<doc>Test item has required properties</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:41:10.217205" elapsed="0.004956"/>
+</test>
+<status status="PASS" start="2025-10-20T00:41:10.115408" elapsed="0.107724"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="4" fail="0" skip="0">Logic</stat>
+</tag>
+<suite>
+<stat name="Menu" id="s1" pass="4" fail="0" skip="0">Menu</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.9 on win32)" generated="2025-10-20T00:48:53.328113" rpa="false" schemaversion="5">
+<suite id="s1" name="EmployeeInformation" source="C:\ShabuProject\target\test-classes\EmployeeInformation\EmployeeInformation.robot">
+<test id="s1-t1" name="Verify Employee Management Page Structure" line="5">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-10-20T00:48:53.402663" level="INFO">${sections} = ['Waiter', 'Cashier']</msg>
+<var>${sections}</var>
+<arg>Waiter</arg>
+<arg>Cashier</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-10-20T00:48:53.402130" elapsed="0.000619"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-10-20T00:48:53.403801" level="INFO">Length is 2.</msg>
+<msg time="2025-10-20T00:48:53.403964" level="INFO">${section_count} = 2</msg>
+<var>${section_count}</var>
+<arg>${sections}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-10-20T00:48:53.403438" elapsed="0.000573"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${section_count} == 2</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T00:48:53.404487" elapsed="0.000726"/>
+</kw>
+<doc>Test page has two main sections: Waiter and Cashier</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:48:53.399535" elapsed="0.006161"/>
+</test>
+<test id="s1-t2" name="Verify Waiter Section Display" line="12">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T00:48:53.407880" level="INFO">&amp;{WAITER_SECTION} = { add=gotoAddwaiter | view=listwaiter }</msg>
+<var>&amp;{WAITER_SECTION}</var>
+<arg>add=gotoAddwaiter</arg>
+<arg>view=listwaiter</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T00:48:53.407308" elapsed="0.000634"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${WAITER_SECTION}</arg>
+<arg>add</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-10-20T00:48:53.408329" elapsed="0.000287"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${WAITER_SECTION}</arg>
+<arg>view</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-10-20T00:48:53.408940" elapsed="0.000235"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${WAITER_SECTION}[add]</arg>
+<arg>gotoAddwaiter</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T00:48:53.409456" elapsed="0.000280"/>
+</kw>
+<doc>Test Waiter section with add and view actions</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:48:53.406482" elapsed="0.003610"/>
+</test>
+<test id="s1-t3" name="Verify Cashier Section Display" line="20">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T00:48:53.411951" level="INFO">&amp;{CASHIER_SECTION} = { add=gotoAddcashier | view=listcashier }</msg>
+<var>&amp;{CASHIER_SECTION}</var>
+<arg>add=gotoAddcashier</arg>
+<arg>view=listcashier</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T00:48:53.411540" elapsed="0.000463"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${CASHIER_SECTION}</arg>
+<arg>add</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-10-20T00:48:53.412396" elapsed="0.000269"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${CASHIER_SECTION}</arg>
+<arg>view</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-10-20T00:48:53.413095" elapsed="0.000415"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${CASHIER_SECTION}[add]</arg>
+<arg>gotoAddcashier</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T00:48:53.414061" elapsed="0.000501"/>
+</kw>
+<doc>Test Cashier section with add and view actions</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:48:53.410792" elapsed="0.004199"/>
+</test>
+<test id="s1-t4" name="Verify Back Button Navigation" line="28">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T00:48:53.416662" level="INFO">${back_link} = home</msg>
+<var>${back_link}</var>
+<arg>home</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T00:48:53.416413" elapsed="0.000296"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${back_link}</arg>
+<arg>home</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T00:48:53.417203" elapsed="0.000432"/>
+</kw>
+<doc>Test back button links to home</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:48:53.415748" elapsed="0.002421"/>
+</test>
+<test id="s1-t5" name="Verify Page Title Display" line="34">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T00:48:53.421443" level="INFO">${title} = จัดการพนักงาน</msg>
+<var>${title}</var>
+<arg>จัดการพนักงาน</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T00:48:53.420991" elapsed="0.000539"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${title}</arg>
+<arg>จัดการพนักงาน</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T00:48:53.422057" elapsed="0.000495"/>
+</kw>
+<doc>Test page title is "จัดการพนักงาน"</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:48:53.419058" elapsed="0.003928"/>
+</test>
+<status status="PASS" start="2025-10-20T00:48:53.331075" elapsed="0.092962"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="5" fail="0" skip="0">Logic</stat>
+</tag>
+<suite>
+<stat name="EmployeeInformation" id="s1" pass="5" fail="0" skip="0">EmployeeInformation</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

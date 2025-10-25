@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.9 on win32)" generated="2025-10-19T21:03:59.297874" rpa="false" schemaversion="5">
+<suite id="s1" name="List Tables" source="C:\ShabuProject\target\test-classes\list_table\list_tables.robot">
+<test id="s1-t1" name="Verify Table Management Page Loads Correctly" line="9">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-10-19T21:04:00.220488" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/Zproject_shabu2/listTable'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-10-19T21:04:00.215994" elapsed="3.666022"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-10-19T21:04:03.883170" elapsed="0.047818"/>
+</kw>
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>0.5s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2025-10-19T21:04:03.931785" elapsed="0.000771"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-10-19T21:04:04.450993" level="INFO">Page title is 'Restaurant Table Management'.</msg>
+<arg>Restaurant Table Management</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-10-19T21:04:03.933984" elapsed="0.517552"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-10-19T21:04:05.496032" level="INFO">Current page contains text 'Table Overview'.</msg>
+<arg>Table Overview</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-10-19T21:04:04.452475" elapsed="1.043852"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-19T21:04:06.021366" level="INFO">Current page contains element 'id=totalTables'.</msg>
+<arg>id=totalTables</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-10-19T21:04:05.497152" elapsed="0.524507"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-19T21:04:06.542290" level="INFO">Current page contains element 'id=searchInput'.</msg>
+<arg>id=searchInput</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-10-19T21:04:06.022414" elapsed="0.520117"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-10-19T21:04:06.543713" elapsed="2.713176"/>
+</kw>
+<doc>Basic smoke test for page load and title</doc>
+<tag>Verify</tag>
+<status status="PASS" start="2025-10-19T21:04:00.155020" elapsed="9.102368"/>
+</test>
+<test id="s1-t2" name="Search And Filter Tables" line="21">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-10-19T21:04:09.260906" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/Zproject_shabu2/listTable'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-10-19T21:04:09.260303" elapsed="4.231122"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-10-19T21:04:13.492305" elapsed="0.619759"/>
+</kw>
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>0.5s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2025-10-19T21:04:14.113041" elapsed="0.001236"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-19T21:04:14.116678" level="INFO">Typing text 'TT001' into text field 'id=searchInput'.</msg>
+<arg>id=searchInput</arg>
+<arg>TT001</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T21:04:14.115600" elapsed="1.904008"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>css=.table-card</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-19T21:04:16.023695" elapsed="0.613165"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-19T21:04:17.161609" level="INFO">Current page contains element 'css=.table-card[data-status="Free"]'.</msg>
+<arg>css=.table-card[data-status="Free"]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-10-19T21:04:16.637599" elapsed="0.524325"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-10-19T21:04:17.162960" elapsed="2.637848"/>
+</kw>
+<doc>Test search and filter functionality</doc>
+<tag>Verify</tag>
+<status status="PASS" start="2025-10-19T21:04:09.258736" elapsed="10.542670"/>
+</test>
+<status status="PASS" start="2025-10-19T21:03:59.302115" elapsed="20.501155"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="2" fail="0" skip="0">Verify</stat>
+</tag>
+<suite>
+<stat name="List Tables" id="s1" pass="2" fail="0" skip="0">List Tables</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

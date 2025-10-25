@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.8 on win32)" generated="2025-10-14T10:19:25.467117" rpa="false" schemaversion="5">
+<suite id="s1" name="Login Customer" source="C:\ShabuProject\target\test-classes\login_customer\login_customer.robot">
+<test id="s1-t1" name="Verify Login Page Loads Successfully" line="27">
+<kw name="Open Browser With Options" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-14T10:19:26.032096" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001D16C7127B0&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>modules=sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-14T10:19:26.031281" elapsed="0.000933"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-14T10:19:26.032632" elapsed="0.000408"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gcm</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-14T10:19:26.033334" elapsed="0.000314"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-10-14T10:19:26.034557" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8080/Zproject_shabu2/gotologin'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-10-14T10:19:26.033941" elapsed="2.050253"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-10-14T10:19:28.084830" elapsed="0.042207"/>
+</kw>
+<status status="PASS" start="2025-10-14T10:19:26.029149" elapsed="2.098103"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>css=button.btn-login</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-14T10:19:28.127807" elapsed="0.025913"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-10-14T10:19:28.178963" level="INFO">Current page contains text 'เข้าสู่ระบบลูกค้า'.</msg>
+<arg>เข้าสู่ระบบลูกค้า</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-10-14T10:19:28.154514" elapsed="0.024653"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-10-14T10:19:28.180496" elapsed="2.216069"/>
+</kw>
+<status status="PASS" start="2025-10-14T10:19:26.026757" elapsed="4.370290"/>
+</test>
+<test id="s1-t2" name="Test Successful Login" line="31">
+<kw name="Open Browser With Options" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-14T10:19:30.401674" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001D16C79D310&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>modules=sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-14T10:19:30.400949" elapsed="0.000803"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-14T10:19:30.402025" elapsed="0.000311"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gcm</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-14T10:19:30.402545" elapsed="0.000244"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-10-14T10:19:30.403567" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8080/Zproject_shabu2/gotologin'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-10-14T10:19:30.403044" elapsed="1.811228"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-10-14T10:19:32.214840" elapsed="0.046277"/>
+</kw>
+<status status="PASS" start="2025-10-14T10:19:30.400139" elapsed="1.861234"/>
+</kw>
+<kw name="Fill Login Form">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=input[name='cususername']</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-14T10:19:32.263722" elapsed="0.047331"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-14T10:19:32.311931" level="INFO">Typing text 'y-cai1' into text field 'css=input[name='cususername']'.</msg>
+<arg>css=input[name='cususername']</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-14T10:19:32.311416" elapsed="0.212027"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-14T10:19:32.524507" level="INFO">Typing text 'apri12012' into text field 'css=input[name='cuspassword']'.</msg>
+<arg>css=input[name='cuspassword']</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-14T10:19:32.523882" elapsed="0.164812"/>
+</kw>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+<status status="PASS" start="2025-10-14T10:19:32.262461" elapsed="0.426459"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=button.btn-login</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-14T10:19:32.689463" elapsed="0.032036"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>css=button.btn-login</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-10-14T10:19:32.722096" elapsed="0.034045"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-14T10:19:32.757124" level="INFO">Clicking button 'css=button.btn-login'.</msg>
+<arg>css=button.btn-login</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-14T10:19:32.756688" elapsed="0.511050"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-10-14T10:19:33.268786" elapsed="2.269757"/>
+</kw>
+<status status="PASS" start="2025-10-14T10:19:30.398774" elapsed="5.140285"/>
+</test>
+<test id="s1-t3" name="Test Missing Username" line="37">
+<kw name="Open Browser With Options" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-14T10:19:35.542692" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001D16C79C2D0&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>modules=sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-14T10:19:35.542158" elapsed="0.000599"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-14T10:19:35.543002" elapsed="0.000263"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gcm</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-14T10:19:35.543863" elapsed="0.000358"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-10-14T10:19:35.544990" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8080/Zproject_shabu2/gotologin'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-10-14T10:19:35.544483" elapsed="1.822713"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-10-14T10:19:37.367731" elapsed="0.043126"/>
+</kw>
+<status status="PASS" start="2025-10-14T10:19:35.541572" elapsed="1.869534"/>
+</kw>
+<kw name="Fill Login Form">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=input[name='cususername']</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-14T10:19:37.413835" elapsed="0.044956"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-14T10:19:37.459891" level="INFO">Typing text '' into text field 'css=input[name='cususername']'.</msg>
+<arg>css=input[name='cususername']</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-14T10:19:37.459259" elapsed="0.187175"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-14T10:19:37.647291" level="INFO">Typing text 'apri12012' into text field 'css=input[name='cuspassword']'.</msg>
+<arg>css=input[name='cuspassword']</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-14T10:19:37.646797" elapsed="0.191619"/>
+</kw>
+<arg>${EMPTY}</arg>
+<arg>${PASSWORD}</arg>
+<status status="PASS" start="2025-10-14T10:19:37.412075" elapsed="0.426564"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=button.btn-login</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-14T10:19:37.839133" elapsed="0.055485"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-14T10:19:37.896165" level="INFO">Clicking button 'css=button.btn-login'.</msg>
+<arg>css=button.btn-login</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-14T10:19:37.895522" elapsed="0.130222"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-14T10:19:38.048249" level="INFO">Current page contains element 'css=input[name='cususername']:invalid'.</msg>
+<arg>css=input[name='cususername']:invalid</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-10-14T10:19:38.026383" elapsed="0.022065"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-10-14T10:19:38.049217" elapsed="2.226026"/>
+</kw>
+<status status="PASS" start="2025-10-14T10:19:35.540580" elapsed="4.735218"/>
+</test>
+<test id="s1-t4" name="Test Missing Password" line="43">
+<kw name="Open Browser With Options" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-14T10:19:40.279718" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001D16C7D83E0&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>modules=sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-14T10:19:40.279097" elapsed="0.000694"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-14T10:19:40.280059" elapsed="0.000286"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gcm</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-14T10:19:40.280591" elapsed="0.000320"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-10-14T10:19:40.281794" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8080/Zproject_shabu2/gotologin'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-10-14T10:19:40.281249" elapsed="1.838877"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-10-14T10:19:42.120645" elapsed="0.056257"/>
+</kw>
+<status status="PASS" start="2025-10-14T10:19:40.278383" elapsed="1.898803"/>
+</kw>
+<kw name="Fill Login Form">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=input[name='cususername']</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-14T10:19:42.180198" elapsed="0.061787"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-14T10:19:42.243237" level="INFO">Typing text 'y-cai1' into text field 'css=input[name='cususername']'.</msg>
+<arg>css=input[name='cususername']</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-14T10:19:42.242497" elapsed="0.218983"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-14T10:19:42.463666" level="INFO">Typing text '' into text field 'css=input[name='cuspassword']'.</msg>
+<arg>css=input[name='cuspassword']</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-14T10:19:42.462018" elapsed="0.137768"/>
+</kw>
+<arg>${USERNAME}</arg>
+<arg>${EMPTY}</arg>
+<status status="PASS" start="2025-10-14T10:19:42.178299" elapsed="0.421715"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=button.btn-login</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-14T10:19:42.600546" elapsed="0.031350"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-14T10:19:42.632953" level="INFO">Clicking button 'css=button.btn-login'.</msg>
+<arg>css=button.btn-login</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-14T10:19:42.632492" elapsed="0.142409"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-14T10:19:42.802846" level="INFO">Current page contains element 'css=input[name='cuspassword']:invalid'.</msg>
+<arg>css=input[name='cuspassword']:invalid</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-10-14T10:19:42.775677" elapsed="0.027385"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-10-14T10:19:42.803903" elapsed="2.230427"/>
+</kw>
+<status status="PASS" start="2025-10-14T10:19:40.277105" elapsed="4.757691"/>
+</test>
+<test id="s1-t5" name="Test Register Link Navigation" line="50">
+<kw name="Open Browser With Options" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-14T10:19:45.038187" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001D16C69FA80&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>modules=sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-14T10:19:45.037345" elapsed="0.001237"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-14T10:19:45.038925" elapsed="0.000359"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gcm</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-14T10:19:45.039491" elapsed="0.000285"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-10-14T10:19:45.040555" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8080/Zproject_shabu2/gotologin'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-10-14T10:19:45.040043" elapsed="1.885375"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-10-14T10:19:46.926002" elapsed="0.048785"/>
+</kw>
+<status status="PASS" start="2025-10-14T10:19:45.036622" elapsed="1.938431"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=a[href='regiscus']</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-14T10:19:46.975730" elapsed="0.048896"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>css=a[href='regiscus']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-10-14T10:19:47.025378" elapsed="0.427566"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>css=a[href='regiscus']</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-10-14T10:19:47.453521" elapsed="0.039777"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-14T10:19:47.494665" level="INFO">Clicking element 'css=a[href='regiscus']'.</msg>
+<arg>css=a[href='regiscus']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-14T10:19:47.494110" elapsed="0.338032"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ลงทะเบียนลูกค้า</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-14T10:19:47.832907" elapsed="0.029758"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-10-14T10:19:47.863590" elapsed="2.240190"/>
+</kw>
+<status status="PASS" start="2025-10-14T10:19:45.035756" elapsed="5.068433"/>
+</test>
+<status status="PASS" start="2025-10-14T10:19:25.472010" elapsed="24.633660"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Login Customer" id="s1" pass="5" fail="0" skip="0">Login Customer</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

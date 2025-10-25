@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.9 on win32)" generated="2025-10-20T00:50:02.844269" rpa="false" schemaversion="5">
+<suite id="s1" name="Homecustomer" source="C:\ShabuProject\target\test-classes\Homecustomer\Homecustomer.robot">
+<test id="s1-t1" name="Verify Navigation Links Structure" line="5">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-10-20T00:50:02.914365" level="INFO">@{links} = [ Home | Reserve | Menu | Contact ]</msg>
+<var>@{links}</var>
+<arg>Home</arg>
+<arg>Reserve</arg>
+<arg>Menu</arg>
+<arg>Contact</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-10-20T00:50:02.913736" elapsed="0.000715"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-10-20T00:50:02.915616" level="INFO">Length is 4.</msg>
+<msg time="2025-10-20T00:50:02.915805" level="INFO">${link_count} = 4</msg>
+<var>${link_count}</var>
+<arg>${links}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-10-20T00:50:02.915229" elapsed="0.000629"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${link_count} == 4</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T00:50:02.916365" elapsed="0.000705"/>
+</kw>
+<doc>Test navigation has Home, Reserve, Menu, Contact links</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:50:02.911594" elapsed="0.006035"/>
+</test>
+<test id="s1-t2" name="Verify Auth Buttons Display" line="12">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-10-20T00:50:02.919693" level="INFO">@{buttons} = [ Login | Register ]</msg>
+<var>@{buttons}</var>
+<arg>Login</arg>
+<arg>Register</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-10-20T00:50:02.919337" elapsed="0.000417"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-10-20T00:50:02.920298" level="INFO">Length is 2.</msg>
+<msg time="2025-10-20T00:50:02.920416" level="INFO">${button_count} = 2</msg>
+<var>${button_count}</var>
+<arg>${buttons}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-10-20T00:50:02.920092" elapsed="0.000364"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${button_count} == 2</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T00:50:02.920819" elapsed="0.000482"/>
+</kw>
+<doc>Test Login and Register buttons exist</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:50:02.918494" elapsed="0.003108"/>
+</test>
+<test id="s1-t3" name="Verify Page Title Display" line="19">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T00:50:02.923484" level="INFO">${title} = Shabu Restaurant</msg>
+<var>${title}</var>
+<arg>Shabu Restaurant</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T00:50:02.923196" elapsed="0.000342"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${title}</arg>
+<arg>Shabu Restaurant</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T00:50:02.923835" elapsed="0.000316"/>
+</kw>
+<doc>Test page title is "Shabu Restaurant"</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:50:02.922437" elapsed="0.002133"/>
+</test>
+<test id="s1-t4" name="Verify Menu Button Action" line="25">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T00:50:02.926581" level="INFO">${menu_link} = /menu</msg>
+<var>${menu_link}</var>
+<arg>/menu</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T00:50:02.926138" elapsed="0.000536"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${menu_link}</arg>
+<arg>/menu</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T00:50:02.927264" elapsed="0.000536"/>
+</kw>
+<doc>Test menu button links to menu</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:50:02.925394" elapsed="0.002800"/>
+</test>
+<test id="s1-t5" name="Verify Layout Sections" line="31">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-10-20T00:50:02.930005" level="INFO">@{sections} = [ left | right ]</msg>
+<var>@{sections}</var>
+<arg>left</arg>
+<arg>right</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-10-20T00:50:02.929661" elapsed="0.000442"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-10-20T00:50:02.930610" level="INFO">Length is 2.</msg>
+<msg time="2025-10-20T00:50:02.930719" level="INFO">${section_count} = 2</msg>
+<var>${section_count}</var>
+<arg>${sections}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-10-20T00:50:02.930433" elapsed="0.000321"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${section_count} == 2</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T00:50:02.931119" elapsed="0.000502"/>
+</kw>
+<doc>Test left and right sections exist</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:50:02.928948" elapsed="0.003006"/>
+</test>
+<status status="PASS" start="2025-10-20T00:50:02.847352" elapsed="0.085572"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="5" fail="0" skip="0">Logic</stat>
+</tag>
+<suite>
+<stat name="Homecustomer" id="s1" pass="5" fail="0" skip="0">Homecustomer</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

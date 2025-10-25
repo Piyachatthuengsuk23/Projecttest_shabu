@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.9 on win32)" generated="2025-10-20T01:03:46.755937" rpa="false" schemaversion="5">
+<suite id="s1" name="listCashier" source="C:\ShabuProject\target\test-classes\listCashier\listCashier.robot">
+<test id="s1-t1" name="Verify Add Button Link" line="6">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T01:03:46.827212" level="INFO">${add_link} = gotoAddcashier</msg>
+<var>${add_link}</var>
+<arg>gotoAddcashier</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T01:03:46.826650" elapsed="0.000651"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${add_link}</arg>
+<arg>gotoAddcashier</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T01:03:46.827958" elapsed="0.000597"/>
+</kw>
+<doc>Test add button to gotoAddcashier</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T01:03:46.824358" elapsed="0.004703"/>
+</test>
+<test id="s1-t2" name="Verify Edit Link Format" line="12">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T01:03:46.831615" level="INFO">&amp;{CASHIER} = { empUsername=admin1 }</msg>
+<var>&amp;{CASHIER}</var>
+<arg>empUsername=admin1</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T01:03:46.830959" elapsed="0.000729"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-20T01:03:46.833368" level="INFO">${edit_url} = geteditcashier?empUsername=admin1</msg>
+<var>${edit_url}</var>
+<arg>'geteditcashier?empUsername=' + '${CASHIER}[empUsername]'</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-20T01:03:46.832279" elapsed="0.001175"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${edit_url}</arg>
+<arg>geteditcashier</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-10-20T01:03:46.834020" elapsed="0.000402"/>
+</kw>
+<doc>Test edit link with empUsername</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T01:03:46.829859" elapsed="0.005038"/>
+</test>
+<test id="s1-t3" name="Verify Delete Function Call" line="19">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T01:03:46.837116" level="INFO">${delete_action} = deleteEmployeeCashier</msg>
+<var>${delete_action}</var>
+<arg>deleteEmployeeCashier</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T01:03:46.836798" elapsed="0.000385"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${delete_action}</arg>
+<arg>deleteEmployeeCashier</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T01:03:46.837605" elapsed="0.000397"/>
+</kw>
+<doc>Test delete calls deleteEmployeeCashier</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T01:03:46.835968" elapsed="0.002428"/>
+</test>
+<test id="s1-t4" name="Verify Back Link Action" line="25">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T01:03:46.840412" level="INFO">${back_link} = backmain</msg>
+<var>${back_link}</var>
+<arg>backmain</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T01:03:46.839910" elapsed="0.000578"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${back_link}</arg>
+<arg>backmain</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T01:03:46.841032" elapsed="0.000527"/>
+</kw>
+<doc>Test back to backmain</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T01:03:46.839142" elapsed="0.002969"/>
+</test>
+<test id="s1-t5" name="Verify Error Message Conditional" line="31">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-20T01:03:46.844220" level="INFO">${has_error} = True</msg>
+<var>${has_error}</var>
+<arg>True</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-20T01:03:46.843760" elapsed="0.000521"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${has_error} == True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T01:03:46.844667" elapsed="0.000487"/>
+</kw>
+<doc>Test error message if not empty</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T01:03:46.842861" elapsed="0.002640"/>
+</test>
+<status status="PASS" start="2025-10-20T01:03:46.759315" elapsed="0.087126"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="5" fail="0" skip="0">Logic</stat>
+</tag>
+<suite>
+<stat name="listCashier" id="s1" pass="5" fail="0" skip="0">listCashier</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

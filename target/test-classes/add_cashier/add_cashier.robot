@@ -1,0 +1,129 @@
+*** Settings ***
+Library    SeleniumLibrary
+Test Setup    Open Browser With Options
+Test Teardown    Close Browser
+
+*** Variables ***
+${URL}    http://localhost:8082/Zproject_shabu2/gotoAddcashier
+${BROWSER}    chrome
+${EMP_USERNAME}    cashier001
+${PASSWORD}    Pass1234
+${EMP_NAME}    สมศรี สุขใจ
+${AGE}    30
+${POSITION}    แคชเชียร์    # ใช้ข้อความตาม <option> ใน HTML
+${IMAGE_URL}    https://example.com/cashier.jpg
+${EMPTY}    ${EMPTY}
+
+*** Keywords ***
+Open Browser With Options
+    ${options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    modules=sys
+    Call Method    ${options}    add_argument    --disable-notifications
+    Call Method    ${options}    add_argument    --disable-gcm
+    Open Browser    ${URL}    ${BROWSER}    options=${options}
+    Maximize Browser Window
+    Set Selenium Implicit Wait    10s
+    Sleep    2s    # เพิ่ม delay หลังเปิดเบราว์เซอร์
+
+Fill Add Waiter Form
+    [Arguments]    ${emp_username}    ${password}    ${emp_name}    ${age}    ${position}    ${image_url}
+    Wait Until Element Is Visible    css=input#empusername    timeout=10s
+    Input Text    css=input#empusername    ${emp_username}
+    Sleep    1s    # เพิ่ม delay หลังกรอก username
+    Input Text    css=input#password    ${password}
+    Sleep    1s    # เพิ่ม delay หลังกรอก password
+    Input Text    css=input#empname    ${emp_name}
+    Sleep    1s    # เพิ่ม delay หลังกรอกชื่อพนักงาน
+    Input Text    css=input#age    ${age}
+    Sleep    1s    # เพิ่ม delay หลังกรอกอายุ
+    Wait Until Element Is Visible    css=select#position    timeout=10s
+    Wait Until Keyword Succeeds    3x    2s    Element Should Be Visible    css=select#position option
+    ${options}=    Get List Items    css=select#position    values=True
+    Log    Available options in position dropdown: ${options}
+    Select From List By Label    css=select#position    ${position}
+    Sleep    1s    # เพิ่ม delay หลังเลือกตำแหน่ง
+    Input Text    css=input#url    ${image_url}
+    Sleep    1s    # เพิ่ม delay หลังกรอก URL รูปภาพ
+    # เลื่อนลงเพื่อให้ปุ่ม submit อยู่ในมุมมอง
+    Execute JavaScript    window.scrollTo(0, document.body.scrollHeight);
+    Sleep    1s
+
+*** Test Cases ***
+Verify Add Waiter Page Loads Successfully
+    Wait Until Page Contains Element    css=button.btn-primary    timeout=10s
+    Page Should Contain    เพิ่มพนักงานแคชเชียร์
+    Sleep    2s    # เพิ่ม delay เพื่อดูหน้าเพจ
+
+Test Debug Position Options
+    Wait Until Element Is Visible    css=select#position    timeout=10s
+    ${options}=    Get List Items    css=select#position    values=True
+    Log    Available position options: ${options}
+    ${labels}=    Get List Items    css=select#position
+    Log    Available position labels: ${labels}
+    Sleep    2s    # เพิ่ม delay เพื่อดู log
+
+Test Successful Waiter Addition
+    Fill Add Waiter Form    ${EMP_USERNAME}    ${PASSWORD}    ${EMP_NAME}    ${AGE}    ${POSITION}    ${IMAGE_URL}
+    Wait Until Element Is Visible    css=button.btn-primary    timeout=10s
+    Wait Until Element Is Enabled    css=button.btn-primary    timeout=10s
+    Sleep    1s    # เพิ่ม delay ก่อนคลิกปุ่ม
+    Click Button    css=button.btn-primary
+    Sleep    3s    # เพิ่ม delay หลังคลิกเพื่อดูผลลัพธ์
+
+Test Missing Username
+    Fill Add Waiter Form    ${EMPTY}    ${PASSWORD}    ${EMP_NAME}    ${AGE}    ${POSITION}    ${IMAGE_URL}
+    Wait Until Element Is Visible    css=button.btn-primary    timeout=10s
+    Sleep    1s    # เพิ่ม delay ก่อนคลิกปุ่ม
+    Click Button    css=button.btn-primary
+    Page Should Contain Element    css=input#empusername:invalid
+    Sleep    2s    # เพิ่ม delay เพื่อดู validation error
+
+Test Missing Password
+    Fill Add Waiter Form    ${EMP_USERNAME}    ${EMPTY}    ${EMP_NAME}    ${AGE}    ${POSITION}    ${IMAGE_URL}
+    Wait Until Element Is Visible    css=button.btn-primary    timeout=10s
+    Sleep    1s    # เพิ่ม delay ก่อนคลิกปุ่ม
+    Click Button    css=button.btn-primary
+    Page Should Contain Element    css=input#password:invalid
+    Sleep    2s    # เพิ่ม delay เพื่อดู validation error
+
+Test Missing Employee Name
+    Fill Add Waiter Form    ${EMP_USERNAME}    ${PASSWORD}    ${EMPTY}    ${AGE}    ${POSITION}    ${IMAGE_URL}
+    Wait Until Element Is Visible    css=button.btn-primary    timeout=10s
+    Sleep    1s    # เพิ่ม delay ก่อนคลิกปุ่ม
+    Click Button    css=button.btn-primary
+    Page Should Contain Element    css=input#empname:invalid
+    Sleep    2s    # เพิ่ม delay เพื่อดู validation error
+
+Test Missing Age
+    Fill Add Waiter Form    ${EMP_USERNAME}    ${PASSWORD}    ${EMP_NAME}    ${EMPTY}    ${POSITION}    ${IMAGE_URL}
+    Wait Until Element Is Visible    css=button.btn-primary    timeout=10s
+    Sleep    1s    # เพิ่ม delay ก่อนคลิกปุ่ม
+    Click Button    css=button.btn-primary
+    Page Should Contain Element    css=input#age:invalid
+    Sleep    2s    # เพิ่ม delay เพื่อดู validation error
+
+Test Missing Image URL
+    Fill Add Waiter Form    ${EMP_USERNAME}    ${PASSWORD}    ${EMP_NAME}    ${AGE}    ${POSITION}    ${EMPTY}
+    Wait Until Element Is Visible    css=button.btn-primary    timeout=10s
+    Sleep    1s    # เพิ่ม delay ก่อนคลิกปุ่ม
+    Click Button    css=button.btn-primary
+    Page Should Contain Element    css=input#url:invalid
+    Sleep    2s    # เพิ่ม delay เพื่อดู validation error
+
+Test Back To Main Page Navigation
+    # Scroll down the page to ensure the back link is in view
+    Execute JavaScript    window.scrollTo(0, document.body.scrollHeight);
+    Sleep    1s
+    Wait Until Element Is Visible    css=a[href='backmain']    timeout=10s
+    Scroll Element Into View    css=a[href='backmain']
+    Wait Until Element Is Enabled    css=a[href='backmain']    timeout=10s
+    Sleep    1s    # เพิ่ม delay ก่อนคลิก
+    Click Element    css=a[href='backmain']
+    Wait Until Page Contains    หน้าหลัก    timeout=10s    # แก้ไขตามข้อความจริง
+    Sleep    2s    # เพิ่ม delay หลัง navigate เพื่อดูหน้าใหม่
+
+Test Add Waiter With Waiter Position
+    Fill Add Waiter Form    ${EMP_USERNAME}    ${PASSWORD}    ${EMP_NAME}    ${AGE}    พนักงานเสริฟ์    ${IMAGE_URL}
+    Wait Until Element Is Visible    css=button.btn-primary    timeout=10s
+    Sleep    1s    # เพิ่ม delay ก่อนคลิกปุ่ม
+    Click Button    css=button.btn-primary
+    Sleep    3s    # เพิ่ม delay หลังคลิกเพื่อดูผลลัพธ์

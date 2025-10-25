@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.9 on win32)" generated="2025-10-20T01:01:06.296576" rpa="false" schemaversion="5">
+<suite id="s1" name="Edit MenuFood" source="C:\ShabuProject\target\test-classes\Edit_MenuFood\Edit_MenuFood.robot">
+<test id="s1-t1" name="Verify Edit Food Form Title" line="5">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T01:01:06.368757" level="INFO">${title} = แก้ไขข้อมูลอาหาร</msg>
+<var>${title}</var>
+<arg>แก้ไขข้อมูลอาหาร</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T01:01:06.368284" elapsed="0.000553"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${title}</arg>
+<arg>แก้ไขข้อมูลอาหาร</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T01:01:06.369435" elapsed="0.000417"/>
+</kw>
+<doc>Test form title display</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T01:01:06.366221" elapsed="0.004104"/>
+</test>
+<test id="s1-t2" name="Verify Hidden Food ID Field" line="11">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T01:01:06.372394" level="INFO">&amp;{MENU} = { foodId=1 }</msg>
+<var>&amp;{MENU}</var>
+<arg>foodId=1</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T01:01:06.371884" elapsed="0.000571"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${MENU}</arg>
+<arg>foodId</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-10-20T01:01:06.372809" elapsed="0.000293"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${MENU}[foodId] &gt; 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T01:01:06.373382" elapsed="0.000325"/>
+</kw>
+<doc>Test hidden foodId field exists</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T01:01:06.371147" elapsed="0.002876"/>
+</test>
+<test id="s1-t3" name="Verify Form Fields Structure" line="18">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-10-20T01:01:06.375645" level="INFO">@{fields} = [ foodname | price | foodImage | type ]</msg>
+<var>@{fields}</var>
+<arg>foodname</arg>
+<arg>price</arg>
+<arg>foodImage</arg>
+<arg>type</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-10-20T01:01:06.375321" elapsed="0.000375"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-10-20T01:01:06.376252" level="INFO">Length is 4.</msg>
+<msg time="2025-10-20T01:01:06.376370" level="INFO">${field_count} = 4</msg>
+<var>${field_count}</var>
+<arg>${fields}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-10-20T01:01:06.376055" elapsed="0.000357"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${field_count} == 4</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T01:01:06.376670" elapsed="0.000387"/>
+</kw>
+<doc>Test all form fields exist</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T01:01:06.374666" elapsed="0.002676"/>
+</test>
+<test id="s1-t4" name="Verify Food Types Select Options" line="25">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-10-20T01:01:06.378902" level="INFO">@{food_types} = [ Appetizers | Mains | Desserts ]</msg>
+<var>@{food_types}</var>
+<arg>Appetizers</arg>
+<arg>Mains</arg>
+<arg>Desserts</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-10-20T01:01:06.378606" elapsed="0.000344"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-10-20T01:01:06.379487" level="INFO">Length is 3.</msg>
+<msg time="2025-10-20T01:01:06.379599" level="INFO">${type_count} = 3</msg>
+<var>${type_count}</var>
+<arg>${food_types}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-10-20T01:01:06.379293" elapsed="0.000341"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${type_count} &gt; 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T01:01:06.379933" elapsed="0.000284"/>
+</kw>
+<doc>Test type select from foodTypes</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T01:01:06.377953" elapsed="0.002533"/>
+</test>
+<test id="s1-t5" name="Verify Image Preview Conditional" line="32">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T01:01:06.382310" level="INFO">&amp;{MENU_WITH_IMAGE} = { foodImage=img.jpg }</msg>
+<var>&amp;{MENU_WITH_IMAGE}</var>
+<arg>foodImage=img.jpg</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T01:01:06.381761" elapsed="0.000607"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-20T01:01:06.383398" level="INFO">${has_image} = True</msg>
+<var>${has_image}</var>
+<arg>'${MENU_WITH_IMAGE}[foodImage]' != ''</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-20T01:01:06.382803" elapsed="0.000640"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${has_image} == True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T01:01:06.383781" elapsed="0.000344"/>
+</kw>
+<doc>Test image preview if foodImage not empty</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T01:01:06.381058" elapsed="0.003352"/>
+</test>
+<test id="s1-t6" name="Verify Submit Button Action" line="39">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T01:01:06.386357" level="INFO">${submit_action} = confirmEditMenuFood</msg>
+<var>${submit_action}</var>
+<arg>confirmEditMenuFood</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T01:01:06.385860" elapsed="0.000576"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${submit_action}</arg>
+<arg>confirmEditMenuFood</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T01:01:06.386945" elapsed="0.000529"/>
+</kw>
+<doc>Test submit to confirmEditMenuFood</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T01:01:06.385009" elapsed="0.002945"/>
+</test>
+<test id="s1-t7" name="Verify Back Link Action" line="45">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T01:01:06.389464" level="INFO">${back_link} = ListAllMenuFood</msg>
+<var>${back_link}</var>
+<arg>ListAllMenuFood</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T01:01:06.389202" elapsed="0.000310"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${back_link}</arg>
+<arg>ListAllMenuFood</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T01:01:06.389801" elapsed="0.000236"/>
+</kw>
+<doc>Test back to ListAllMenuFood</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T01:01:06.388565" elapsed="0.001761"/>
+</test>
+<test id="s1-t8" name="Verify Message Display Conditional" line="51">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-20T01:01:06.392910" level="INFO">${has_message} = True</msg>
+<var>${has_message}</var>
+<arg>True</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-20T01:01:06.392442" elapsed="0.000535"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${has_message} == True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T01:01:06.393389" elapsed="0.000400"/>
+</kw>
+<doc>Test success/error messages</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T01:01:06.390911" elapsed="0.003199"/>
+</test>
+<status status="PASS" start="2025-10-20T01:01:06.299505" elapsed="0.095508"/>
+</suite>
+<statistics>
+<total>
+<stat pass="8" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="8" fail="0" skip="0">Logic</stat>
+</tag>
+<suite>
+<stat name="Edit MenuFood" id="s1" pass="8" fail="0" skip="0">Edit MenuFood</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

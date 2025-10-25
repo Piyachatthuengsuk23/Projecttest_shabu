@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.8 on win32)" generated="2025-10-14T11:38:32.698654" rpa="false" schemaversion="5">
+<suite id="s1" name="List Menu Food" source="C:\ShabuProject\target\test-classes\ListAllMenuFood\list_menu_food.robot">
+<test id="s1-t1" name="Verify List Menu Page Loads Successfully" line="25">
+<kw name="Open Browser With Options" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-14T11:38:33.148769" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000215AA86E7B0&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>modules=sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-14T11:38:33.147882" elapsed="0.001021"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-14T11:38:33.149259" elapsed="0.000366"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gcm</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-14T11:38:33.149831" elapsed="0.000205"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-10-14T11:38:33.151230" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8080/Zproject_shabu2/ListAllMenuFood'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-10-14T11:38:33.150244" elapsed="3.330674"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-10-14T11:38:36.481383" elapsed="0.041944"/>
+</kw>
+<status status="PASS" start="2025-10-14T11:38:33.146180" elapsed="3.377445"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>css=table</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-14T11:38:36.524512" elapsed="0.029233"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-10-14T11:38:36.584238" level="INFO">Current page contains text 'รายการเมนูอาหาร'.</msg>
+<arg>รายการเมนูอาหาร</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-10-14T11:38:36.554643" elapsed="0.029842"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-10-14T11:38:36.585761" elapsed="2.212042"/>
+</kw>
+<status status="PASS" start="2025-10-14T11:38:33.144395" elapsed="5.653836"/>
+</test>
+<test id="s1-t2" name="Test Menu Count Display" line="29">
+<kw name="Open Browser With Options" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-14T11:38:38.801866" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000215AA8FCF50&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>modules=sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-14T11:38:38.800939" elapsed="0.001026"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-14T11:38:38.802340" elapsed="0.000422"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gcm</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-14T11:38:38.803003" elapsed="0.000308"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-10-14T11:38:38.804229" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8080/Zproject_shabu2/ListAllMenuFood'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-10-14T11:38:38.803623" elapsed="3.729324"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-10-14T11:38:42.533481" elapsed="0.042430"/>
+</kw>
+<status status="PASS" start="2025-10-14T11:38:38.800246" elapsed="3.776107"/>
+</kw>
+<kw name="Verify Menu Count">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=p.menu-count</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-14T11:38:42.578006" elapsed="0.043226"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-10-14T11:38:42.654463" level="INFO">${menu_count_text} = จำนวนเมนูทั้งหมด: 2 เมนู</msg>
+<var>${menu_count_text}</var>
+<arg>css=p.menu-count</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-14T11:38:42.621567" elapsed="0.033065"/>
+</kw>
+<kw name="Should Match Regexp" owner="BuiltIn">
+<arg>${menu_count_text}</arg>
+<arg>จำนวนเมนูทั้งหมด: ${expected_count} เมนู</arg>
+<doc>Fails if ``string`` does not match ``pattern`` as a regular expression.</doc>
+<status status="PASS" start="2025-10-14T11:38:42.655073" elapsed="0.001026"/>
+</kw>
+<arg>\\d+</arg>
+<status status="PASS" start="2025-10-14T11:38:42.577302" elapsed="0.079023"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-10-14T11:38:42.657252" elapsed="2.205692"/>
+</kw>
+<status status="PASS" start="2025-10-14T11:38:38.799164" elapsed="6.064173"/>
+</test>
+<test id="s1-t3" name="Test Add Menu Button Navigation" line="33">
+<kw name="Open Browser With Options" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-14T11:38:44.867167" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000215AA8FC190&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>modules=sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-14T11:38:44.866340" elapsed="0.000923"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-14T11:38:44.867593" elapsed="0.000423"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gcm</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-14T11:38:44.868302" elapsed="0.000346"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-10-14T11:38:44.869867" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8080/Zproject_shabu2/ListAllMenuFood'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-10-14T11:38:44.869051" elapsed="74.839367"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-10-14T11:39:59.708892" elapsed="0.040483"/>
+</kw>
+<status status="PASS" start="2025-10-14T11:38:44.865570" elapsed="74.884564"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=a.add-btn</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-14T11:39:59.750895" elapsed="0.046122"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>css=a.add-btn</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-10-14T11:39:59.798125" elapsed="0.365566"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>css=a.add-btn</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-10-14T11:40:00.164797" elapsed="0.043088"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-14T11:40:00.209262" level="INFO">Clicking element 'css=a.add-btn'.</msg>
+<arg>css=a.add-btn</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-14T11:40:00.208641" elapsed="0.781250"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>เพิ่มเมนูอาหาร</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-14T11:40:00.990627" elapsed="0.051607"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-10-14T11:40:01.042989" elapsed="2.390646"/>
+</kw>
+<status status="PASS" start="2025-10-14T11:38:44.864476" elapsed="78.569551"/>
+</test>
+<test id="s1-t4" name="Test Edit Menu Button" line="40">
+<kw name="Open Browser With Options" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-14T11:40:03.437512" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000215AA9383E0&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>modules=sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-14T11:40:03.436793" elapsed="0.000807"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-14T11:40:03.437897" elapsed="0.000353"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gcm</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-14T11:40:03.438550" elapsed="0.000277"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-10-14T11:40:03.439675" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8080/Zproject_shabu2/ListAllMenuFood'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-10-14T11:40:03.439109" elapsed="11.892806"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-10-14T11:40:15.332374" elapsed="0.041648"/>
+</kw>
+<status status="PASS" start="2025-10-14T11:40:03.436108" elapsed="11.938103"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=tbody tr:first-child a.edit-btn</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-14T11:40:15.374827" elapsed="0.045449"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>css=tbody tr:first-child a.edit-btn</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-10-14T11:40:15.421212" elapsed="0.358202"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>css=tbody tr:first-child a.edit-btn</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-10-14T11:40:15.780140" elapsed="0.037796"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-14T11:40:15.818927" level="INFO">Clicking element 'css=tbody tr:first-child a.edit-btn'.</msg>
+<arg>css=tbody tr:first-child a.edit-btn</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-14T11:40:15.818505" elapsed="49.315374"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>แก้ไขข้อมูลอาหาร</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-14T11:41:05.134685" elapsed="8.452090"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-10-14T11:41:13.588024" elapsed="2.209442"/>
+</kw>
+<status status="PASS" start="2025-10-14T11:40:03.435069" elapsed="72.362784"/>
+</test>
+<test id="s1-t5" name="Test Delete Menu Button" line="48">
+<kw name="Open Browser With Options" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-14T11:41:15.801367" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000215AA807950&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>modules=sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-14T11:41:15.800579" elapsed="0.000877"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-14T11:41:15.801749" elapsed="0.000431"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gcm</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-14T11:41:15.802441" elapsed="0.000251"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-10-14T11:41:15.803447" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8080/Zproject_shabu2/ListAllMenuFood'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-10-14T11:41:15.802935" elapsed="2.791409"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-10-14T11:41:18.594747" elapsed="0.060453"/>
+</kw>
+<status status="PASS" start="2025-10-14T11:41:15.799959" elapsed="2.855520"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=tbody tr:first-child a.delete-btn</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-14T11:41:18.656848" elapsed="0.042571"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>css=tbody tr:first-child a.delete-btn</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-10-14T11:41:18.700137" elapsed="0.296030"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>css=tbody tr:first-child a.delete-btn</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-10-14T11:41:18.996839" elapsed="0.037867"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2025-10-14T11:41:19.051068" level="INFO">${row_count} = 2</msg>
+<var>${row_count}</var>
+<arg>css=tbody tr</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2025-10-14T11:41:19.035286" elapsed="0.016052"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${row_count} &gt;= 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-14T11:41:19.051831" elapsed="0.001003"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-10-14T11:41:19.053771" elapsed="2.199764"/>
+</kw>
+<status status="PASS" start="2025-10-14T11:41:15.798944" elapsed="5.454996"/>
+</test>
+<test id="s1-t6" name="Test Error Message Display" line="58">
+<kw name="Open Browser With Options" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-14T11:41:21.257723" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000215AA889B50&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>modules=sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-14T11:41:21.256897" elapsed="0.000925"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-14T11:41:21.258201" elapsed="0.000398"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gcm</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-14T11:41:21.258878" elapsed="0.000415"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-10-14T11:41:21.260182" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8080/Zproject_shabu2/ListAllMenuFood'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-10-14T11:41:21.259638" elapsed="1.698713"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-10-14T11:41:22.958874" elapsed="1.189430"/>
+</kw>
+<status status="PASS" start="2025-10-14T11:41:21.256202" elapsed="2.892423"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2025-10-14T11:41:29.603471" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-14T11:41:29.603813" level="FAIL">Element 'css=div.error-message' not visible after 5 seconds.</msg>
+<arg>css=div.error-message</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-10-14T11:41:24.149969" elapsed="5.458115">Element 'css=div.error-message' not visible after 5 seconds.</status>
+</kw>
+<arg>Wait Until Element Is Visible</arg>
+<arg>css=div.error-message</arg>
+<arg>timeout=5s</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-14T11:41:24.149428" elapsed="5.459179"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-10-14T11:41:29.609283" elapsed="2.237581"/>
+</kw>
+<status status="PASS" start="2025-10-14T11:41:21.254997" elapsed="10.592273"/>
+</test>
+<status status="PASS" start="2025-10-14T11:38:32.701255" elapsed="179.147100"/>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="List Menu Food" id="s1" pass="6" fail="0" skip="0">List Menu Food</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

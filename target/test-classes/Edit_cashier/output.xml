@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.9 on win32)" generated="2025-10-20T01:00:06.554433" rpa="false" schemaversion="5">
+<suite id="s1" name="Edit cashier" source="C:\ShabuProject\target\test-classes\Edit_cashier\Edit_cashier.robot">
+<test id="s1-t1" name="Verify Form Title Display" line="5">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T01:00:06.622795" level="INFO">${title} = แก้ไขข้อมูลพนักงานแคชเชียร์</msg>
+<var>${title}</var>
+<arg>แก้ไขข้อมูลพนักงานแคชเชียร์</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T01:00:06.622222" elapsed="0.000661"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${title}</arg>
+<arg>แก้ไขข้อมูลพนักงานแคชเชียร์</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T01:00:06.623658" elapsed="0.000595"/>
+</kw>
+<doc>Test form title exists</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T01:00:06.619547" elapsed="0.005478"/>
+</test>
+<test id="s1-t2" name="Verify Username Field Readonly" line="11">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T01:00:06.627555" level="INFO">&amp;{CASHIER} = { empUsername=admin }</msg>
+<var>&amp;{CASHIER}</var>
+<arg>empUsername=admin</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T01:00:06.626789" elapsed="0.000867"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-20T01:00:06.628760" level="INFO">${is_readonly} = True</msg>
+<var>${is_readonly}</var>
+<arg>True</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-20T01:00:06.628234" elapsed="0.000596"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${is_readonly} == True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T01:00:06.629516" elapsed="0.000681"/>
+</kw>
+<doc>Test username is readonly</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T01:00:06.625854" elapsed="0.004800"/>
+</test>
+<test id="s1-t3" name="Verify Form Fields Structure" line="18">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-10-20T01:00:06.632882" level="INFO">@{fields} = [ password | empname | age | position ]</msg>
+<var>@{fields}</var>
+<arg>password</arg>
+<arg>empname</arg>
+<arg>age</arg>
+<arg>position</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-10-20T01:00:06.632442" elapsed="0.000512"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-10-20T01:00:06.633828" level="INFO">Length is 4.</msg>
+<msg time="2025-10-20T01:00:06.634021" level="INFO">${field_count} = 4</msg>
+<var>${field_count}</var>
+<arg>${fields}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-10-20T01:00:06.633507" elapsed="0.000567"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${field_count} == 4</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T01:00:06.634591" elapsed="0.000643"/>
+</kw>
+<doc>Test all form fields exist</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T01:00:06.631440" elapsed="0.004233"/>
+</test>
+<test id="s1-t4" name="Verify Position Select Options" line="25">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-10-20T01:00:06.637671" level="INFO">@{options} = [ แคชเชียร์ | พนักงานเสริฟ์ ]</msg>
+<var>@{options}</var>
+<arg>แคชเชียร์</arg>
+<arg>พนักงานเสริฟ์</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-10-20T01:00:06.637351" elapsed="0.000382"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-10-20T01:00:06.638450" level="INFO">Length is 2.</msg>
+<msg time="2025-10-20T01:00:06.638601" level="INFO">${option_count} = 2</msg>
+<var>${option_count}</var>
+<arg>${options}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-10-20T01:00:06.638183" elapsed="0.000463"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${option_count} == 2</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T01:00:06.638995" elapsed="0.000407"/>
+</kw>
+<doc>Test position options</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T01:00:06.636527" elapsed="0.003266"/>
+</test>
+<test id="s1-t5" name="Verify Submit Button Action" line="32">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T01:00:06.641786" level="INFO">${submit_action} = confirmEditCashier</msg>
+<var>${submit_action}</var>
+<arg>confirmEditCashier</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T01:00:06.641492" elapsed="0.000353"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${submit_action}</arg>
+<arg>confirmEditCashier</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T01:00:06.642348" elapsed="0.000386"/>
+</kw>
+<doc>Test submit to confirmEditCashier</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T01:00:06.640645" elapsed="0.002456"/>
+</test>
+<test id="s1-t6" name="Verify Back Link Action" line="38">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T01:00:06.645270" level="INFO">${back_link} = listcashier</msg>
+<var>${back_link}</var>
+<arg>listcashier</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T01:00:06.644948" elapsed="0.000380"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${back_link}</arg>
+<arg>listcashier</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T01:00:06.645860" elapsed="0.000412"/>
+</kw>
+<doc>Test back to listcashier</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T01:00:06.644063" elapsed="0.002745"/>
+</test>
+<test id="s1-t7" name="Verify Message Display Conditional" line="44">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-20T01:00:06.649342" level="INFO">${has_message} = True</msg>
+<var>${has_message}</var>
+<arg>True</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-20T01:00:06.648880" elapsed="0.000526"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${has_message} == True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T01:00:06.649895" elapsed="0.000474"/>
+</kw>
+<doc>Test success/error messages</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T01:00:06.647935" elapsed="0.002847"/>
+</test>
+<status status="PASS" start="2025-10-20T01:00:06.557406" elapsed="0.094643"/>
+</suite>
+<statistics>
+<total>
+<stat pass="7" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="7" fail="0" skip="0">Logic</stat>
+</tag>
+<suite>
+<stat name="Edit cashier" id="s1" pass="7" fail="0" skip="0">Edit cashier</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

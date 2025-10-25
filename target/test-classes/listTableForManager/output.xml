@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.9 on win32)" generated="2025-10-20T01:06:49.028182" rpa="false" schemaversion="5">
+<suite id="s1" name="listTableForManager" source="C:\ShabuProject\target\test-classes\listTableForManager\listTableForManager.robot">
+<test id="s1-t1" name="Verify Table Management Header Display" line="5">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T01:06:49.095194" level="INFO">${list_size} = 5</msg>
+<var>${list_size}</var>
+<arg>5</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T01:06:49.094536" elapsed="0.000760"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-20T01:06:49.096782" level="INFO">${has_header} = True</msg>
+<var>${has_header}</var>
+<arg>${list_size} &gt;= 0</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-20T01:06:49.095922" elapsed="0.000944"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${has_header} == True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T01:06:49.097415" elapsed="0.000656"/>
+</kw>
+<doc>Test header with title and count</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T01:06:49.092016" elapsed="0.006636"/>
+</test>
+<test id="s1-t2" name="Verify Add Button Link" line="12">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T01:06:49.100792" level="INFO">${add_link} = gotoAddTable</msg>
+<var>${add_link}</var>
+<arg>gotoAddTable</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T01:06:49.100452" elapsed="0.000407"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${add_link}</arg>
+<arg>gotoAddTable</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T01:06:49.101236" elapsed="0.000345"/>
+</kw>
+<doc>Test add button to gotoAddTable</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T01:06:49.099549" elapsed="0.002498"/>
+</test>
+<test id="s1-t3" name="Verify Empty State Conditional" line="18">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-10-20T01:06:49.104146" level="INFO">@{empty_list} = [ ]</msg>
+<var>@{empty_list}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-10-20T01:06:49.103819" elapsed="0.000384"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-20T01:06:49.105323" level="INFO">${is_empty} = True</msg>
+<var>${is_empty}</var>
+<arg>len(${empty_list}) == 0</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-20T01:06:49.104641" elapsed="0.000755"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${is_empty} == True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T01:06:49.105976" elapsed="0.000943"/>
+</kw>
+<doc>Test empty state if no tables</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T01:06:49.102954" elapsed="0.004519"/>
+</test>
+<test id="s1-t4" name="Verify Edit Link Format" line="25">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T01:06:49.110136" level="INFO">&amp;{TABLE} = { tableid=1 }</msg>
+<var>&amp;{TABLE}</var>
+<arg>tableid=1</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T01:06:49.109547" elapsed="0.000652"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-20T01:06:49.111448" level="INFO">${edit_url} = geteditTable?tableid=1</msg>
+<var>${edit_url}</var>
+<arg>'geteditTable?tableid=' + str(${TABLE}[tableid])</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-20T01:06:49.110789" elapsed="0.000729"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${edit_url}</arg>
+<arg>geteditTable</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-10-20T01:06:49.112086" elapsed="0.000455"/>
+</kw>
+<doc>Test edit link with tableid</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T01:06:49.108492" elapsed="0.004518"/>
+</test>
+<test id="s1-t5" name="Verify Delete Function Call" line="32">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T01:06:49.114997" level="INFO">${delete_action} = deleteTable</msg>
+<var>${delete_action}</var>
+<arg>deleteTable</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T01:06:49.114671" elapsed="0.000385"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${delete_action}</arg>
+<arg>deleteTable</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T01:06:49.115577" elapsed="0.000554"/>
+</kw>
+<doc>Test delete calls deleteTable</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T01:06:49.113778" elapsed="0.002789"/>
+</test>
+<test id="s1-t6" name="Verify Back Link Action" line="38">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T01:06:49.118450" level="INFO">${back_link} = home</msg>
+<var>${back_link}</var>
+<arg>home</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T01:06:49.118120" elapsed="0.000392"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${back_link}</arg>
+<arg>home</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T01:06:49.118854" elapsed="0.000310"/>
+</kw>
+<doc>Test back to home</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T01:06:49.117340" elapsed="0.002240"/>
+</test>
+<test id="s1-t7" name="Verify Error Message Conditional" line="44">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-20T01:06:49.121674" level="INFO">${has_error} = True</msg>
+<var>${has_error}</var>
+<arg>True</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-20T01:06:49.121177" elapsed="0.000568"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${has_error} == True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T01:06:49.122251" elapsed="0.000597"/>
+</kw>
+<doc>Test error message if present</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T01:06:49.120362" elapsed="0.002938"/>
+</test>
+<status status="PASS" start="2025-10-20T01:06:49.031041" elapsed="0.093440"/>
+</suite>
+<statistics>
+<total>
+<stat pass="7" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="7" fail="0" skip="0">Logic</stat>
+</tag>
+<suite>
+<stat name="listTableForManager" id="s1" pass="7" fail="0" skip="0">listTableForManager</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.9 on win32)" generated="2025-10-20T01:05:22.884144" rpa="false" schemaversion="5">
+<suite id="s1" name="listTableForCashier" source="C:\ShabuProject\target\test-classes\listTableForCashier\listTableForCashier.robot">
+<test id="s1-t1" name="Verify Menu List Header Display" line="5">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T01:05:22.956262" level="INFO">${list_size} = 5</msg>
+<var>${list_size}</var>
+<arg>5</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T01:05:22.955655" elapsed="0.000688"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-20T01:05:22.957785" level="INFO">${has_header} = True</msg>
+<var>${has_header}</var>
+<arg>${list_size} &gt;= 0</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-20T01:05:22.957107" elapsed="0.000733"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${has_header} == True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T01:05:22.958381" elapsed="0.000626"/>
+</kw>
+<doc>Test header with title and count</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T01:05:22.952997" elapsed="0.006594"/>
+</test>
+<test id="s1-t2" name="Verify Status Badge Conditional" line="13">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T01:05:22.962530" level="INFO">&amp;{ITEM_CONFIRM} = { status=Confirm }</msg>
+<var>&amp;{ITEM_CONFIRM}</var>
+<arg>status=Confirm</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T01:05:22.961786" elapsed="0.000821"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T01:05:22.963696" level="INFO">&amp;{ITEM_RESERVED} = { status=Reserved }</msg>
+<var>&amp;{ITEM_RESERVED}</var>
+<arg>status=Reserved</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T01:05:22.963255" elapsed="0.000487"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-20T01:05:22.964929" level="INFO">${is_confirm} = True</msg>
+<var>${is_confirm}</var>
+<arg>'${ITEM_CONFIRM}[status]' == 'Confirm'</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-20T01:05:22.964208" elapsed="0.000792"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-20T01:05:22.966137" level="INFO">${is_reserved} = True</msg>
+<var>${is_reserved}</var>
+<arg>'${ITEM_RESERVED}[status]' == 'Reserved'</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-20T01:05:22.965528" elapsed="0.000666"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${is_confirm} == True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T01:05:22.966755" elapsed="0.000620"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${is_reserved} == True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T01:05:22.967927" elapsed="0.000684"/>
+</kw>
+<doc>Test status classes</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T01:05:22.960710" elapsed="0.008474"/>
+</test>
+<test id="s1-t3" name="Verify Empty State Conditional" line="23">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-10-20T01:05:22.971962" level="INFO">@{empty_list} = [ ]</msg>
+<var>@{empty_list}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-10-20T01:05:22.971610" elapsed="0.000416"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-20T01:05:22.973060" level="INFO">${is_empty} = True</msg>
+<var>${is_empty}</var>
+<arg>len(${empty_list}) == 0</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-20T01:05:22.972438" elapsed="0.000683"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${is_empty} == True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T01:05:22.973543" elapsed="0.000433"/>
+</kw>
+<doc>Test empty state if no items</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T01:05:22.970436" elapsed="0.004068"/>
+</test>
+<test id="s1-t4" name="Verify Payment Button Conditional" line="30">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T01:05:22.977077" level="INFO">&amp;{CONFIRM_ITEM} = { status=Confirm }</msg>
+<var>&amp;{CONFIRM_ITEM}</var>
+<arg>status=Confirm</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T01:05:22.976622" elapsed="0.000536"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-20T01:05:22.978337" level="INFO">${show_payment} = True</msg>
+<var>${show_payment}</var>
+<arg>'${CONFIRM_ITEM}[status]' == 'Confirm'</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-20T01:05:22.977652" elapsed="0.000747"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${show_payment} == True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T01:05:22.978881" elapsed="0.000528"/>
+</kw>
+<doc>Test payment button only for Confirm</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T01:05:22.975660" elapsed="0.004247"/>
+</test>
+<test id="s1-t5" name="Verify Edit Link Format" line="37">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T01:05:22.982332" level="INFO">&amp;{ITEM} = { reserveid=1 }</msg>
+<var>&amp;{ITEM}</var>
+<arg>reserveid=1</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T01:05:22.981730" elapsed="0.000693"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-20T01:05:22.983593" level="INFO">${edit_url} = geteditMenufood?foodId=1</msg>
+<var>${edit_url}</var>
+<arg>'geteditMenufood?foodId=' + str(${ITEM}[reserveid])</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-20T01:05:22.982984" elapsed="0.000671"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${edit_url}</arg>
+<arg>geteditMenufood</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-10-20T01:05:22.984437" elapsed="0.000566"/>
+</kw>
+<doc>Test edit link with reserveid</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T01:05:22.980830" elapsed="0.004967"/>
+</test>
+<test id="s1-t6" name="Verify Back Link Action" line="44">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T01:05:22.988392" level="INFO">${back_link} = homecashier</msg>
+<var>${back_link}</var>
+<arg>homecashier</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T01:05:22.988032" elapsed="0.000425"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${back_link}</arg>
+<arg>homecashier</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T01:05:22.988916" elapsed="0.000401"/>
+</kw>
+<doc>Test back to homecashier</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T01:05:22.986938" elapsed="0.002880"/>
+</test>
+<test id="s1-t7" name="Verify Error Message Conditional" line="50">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-20T01:05:22.992631" level="INFO">${has_error} = True</msg>
+<var>${has_error}</var>
+<arg>True</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-20T01:05:22.991651" elapsed="0.001039"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${has_error} == True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T01:05:22.993254" elapsed="0.000661"/>
+</kw>
+<doc>Test error message if present</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T01:05:22.990761" elapsed="0.003923"/>
+</test>
+<status status="PASS" start="2025-10-20T01:05:22.886758" elapsed="0.109300"/>
+</suite>
+<statistics>
+<total>
+<stat pass="7" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="7" fail="0" skip="0">Logic</stat>
+</tag>
+<suite>
+<stat name="listTableForCashier" id="s1" pass="7" fail="0" skip="0">listTableForCashier</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

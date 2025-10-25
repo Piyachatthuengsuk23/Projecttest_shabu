@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.9 on win32)" generated="2025-10-20T00:39:24.832032" rpa="false" schemaversion="5">
+<suite id="s1" name="Cart" source="C:\ShabuProject\target\test-classes\Cart\Cart.robot">
+<test id="s1-t1" name="Verify Empty Cart Displays No Items Message" line="8">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-10-20T00:39:24.912264" level="INFO">${cart_items} = []</msg>
+<var>${cart_items}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-10-20T00:39:24.911701" elapsed="0.000695"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-20T00:39:24.913879" level="INFO">${has_items} = False</msg>
+<var>${has_items}</var>
+<arg>len(${cart_items}) &gt; 0</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-20T00:39:24.913110" elapsed="0.000861"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${has_items} == False</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T00:39:24.914557" elapsed="0.000709"/>
+</kw>
+<doc>Test empty cart logic (should show "ยังไม่มีรายการในตะกร้า")</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:39:24.907871" elapsed="0.008144"/>
+</test>
+<status status="PASS" start="2025-10-20T00:39:24.835751" elapsed="0.081497"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Logic</stat>
+</tag>
+<suite>
+<stat name="Cart" id="s1" pass="1" fail="0" skip="0">Cart</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

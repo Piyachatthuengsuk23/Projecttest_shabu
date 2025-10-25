@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.9 on win32)" generated="2025-10-20T01:10:30.828937" rpa="false" schemaversion="5">
+<suite id="s1" name="loginManager" source="C:\ShabuProject\target\test-classes\loginManager\loginManager.robot">
+<test id="s1-t1" name="Verify Login Page Title" line="5">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T01:10:30.897017" level="INFO">${title} = Login - Restaurant Management System</msg>
+<var>${title}</var>
+<arg>Login - Restaurant Management System</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T01:10:30.896545" elapsed="0.000554"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${title}</arg>
+<arg>Login - Restaurant Management System</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T01:10:30.897738" elapsed="0.000560"/>
+</kw>
+<doc>Test page title display</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T01:10:30.894480" elapsed="0.004381"/>
+</test>
+<test id="s1-t2" name="Verify Roles Section Structure" line="11">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-10-20T01:10:30.901198" level="INFO">@{roles} = [ Manager | Cashier | Waiter | Customer ]</msg>
+<var>@{roles}</var>
+<arg>Manager</arg>
+<arg>Cashier</arg>
+<arg>Waiter</arg>
+<arg>Customer</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-10-20T01:10:30.900699" elapsed="0.000579"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-10-20T01:10:30.901960" level="INFO">Length is 4.</msg>
+<msg time="2025-10-20T01:10:30.902143" level="INFO">${role_count} = 4</msg>
+<var>${role_count}</var>
+<arg>${roles}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-10-20T01:10:30.901693" elapsed="0.000501"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${role_count} == 4</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T01:10:30.902672" elapsed="0.000695"/>
+</kw>
+<doc>Test 4 roles exist</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T01:10:30.899764" elapsed="0.004114"/>
+</test>
+<test id="s1-t3" name="Verify Manager Role Form Action" line="18">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T01:10:30.906510" level="INFO">${manager_action} = RoleManager</msg>
+<var>${manager_action}</var>
+<arg>RoleManager</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T01:10:30.906115" elapsed="0.000465"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${manager_action}</arg>
+<arg>RoleManager</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T01:10:30.907043" elapsed="0.000401"/>
+</kw>
+<doc>Test Manager submits to RoleManager</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T01:10:30.905046" elapsed="0.002849"/>
+</test>
+<test id="s1-t4" name="Verify Cashier Role Form Action" line="24">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T01:10:30.910339" level="INFO">${cashier_action} = RoleCashier</msg>
+<var>${cashier_action}</var>
+<arg>RoleCashier</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T01:10:30.909918" elapsed="0.000518"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${cashier_action}</arg>
+<arg>RoleCashier</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T01:10:30.910987" elapsed="0.000430"/>
+</kw>
+<doc>Test Cashier submits to RoleCashier</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T01:10:30.908837" elapsed="0.003070"/>
+</test>
+<test id="s1-t5" name="Verify Waiter Role Form Action" line="30">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T01:10:30.914522" level="INFO">${waiter_action} = RoleWaiter</msg>
+<var>${waiter_action}</var>
+<arg>RoleWaiter</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T01:10:30.913970" elapsed="0.000650"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${waiter_action}</arg>
+<arg>RoleWaiter</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T01:10:30.915318" elapsed="0.000450"/>
+</kw>
+<doc>Test Waiter submits to RoleWaiter</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T01:10:30.912871" elapsed="0.003405"/>
+</test>
+<test id="s1-t6" name="Verify Customer Role Form Action" line="36">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T01:10:30.919786" level="INFO">${customer_action} = RoleCustomer</msg>
+<var>${customer_action}</var>
+<arg>RoleCustomer</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T01:10:30.918095" elapsed="0.001908"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${customer_action}</arg>
+<arg>RoleCustomer</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T01:10:30.920568" elapsed="0.000488"/>
+</kw>
+<doc>Test Customer submits to RoleCustomer</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T01:10:30.917184" elapsed="0.004258"/>
+</test>
+<test id="s1-t7" name="Verify Login Form Action" line="42">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T01:10:30.923986" level="INFO">${login_action} = LoginManager</msg>
+<var>${login_action}</var>
+<arg>LoginManager</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T01:10:30.923604" elapsed="0.000450"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${login_action}</arg>
+<arg>LoginManager</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T01:10:30.924585" elapsed="0.000372"/>
+</kw>
+<doc>Test login submits to LoginManager</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T01:10:30.922538" elapsed="0.002790"/>
+</test>
+<test id="s1-t8" name="Verify Login Form Fields" line="48">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-10-20T01:10:30.928107" level="INFO">@{fields} = [ username | password ]</msg>
+<var>@{fields}</var>
+<arg>username</arg>
+<arg>password</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-10-20T01:10:30.927574" elapsed="0.000621"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-10-20T01:10:30.929145" level="INFO">Length is 2.</msg>
+<msg time="2025-10-20T01:10:30.929344" level="INFO">${field_count} = 2</msg>
+<var>${field_count}</var>
+<arg>${fields}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-10-20T01:10:30.928823" elapsed="0.000570"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${field_count} == 2</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T01:10:30.929939" elapsed="0.000762"/>
+</kw>
+<doc>Test username and password fields</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T01:10:30.926311" elapsed="0.004887"/>
+</test>
+<status status="PASS" start="2025-10-20T01:10:30.831699" elapsed="0.100870"/>
+</suite>
+<statistics>
+<total>
+<stat pass="8" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="8" fail="0" skip="0">Logic</stat>
+</tag>
+<suite>
+<stat name="loginManager" id="s1" pass="8" fail="0" skip="0">loginManager</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
