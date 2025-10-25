@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.9 on win32)" generated="2025-10-20T00:47:24.731941" rpa="false" schemaversion="5">
+<suite id="s1" name="Reservetable" source="C:\ShabuProject\target\test-classes\reservetable\reservetable.robot">
+<test id="s1-t1" name="Verify User Info Display" line="5">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T00:47:24.799538" level="INFO">&amp;{USER} = { cusname=John Doe | phonenumber=0123456789 | gmail=john@example.com }</msg>
+<var>&amp;{USER}</var>
+<arg>cusname=John Doe</arg>
+<arg>phonenumber=0123456789</arg>
+<arg>gmail=john@example.com</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T00:47:24.798846" elapsed="0.000787"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-20T00:47:24.800935" level="INFO">${has_user} = True</msg>
+<var>${has_user}</var>
+<arg>'${USER}[cusname]' != ''</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-20T00:47:24.800313" elapsed="0.000684"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${has_user} == True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T00:47:24.801585" elapsed="0.000483"/>
+</kw>
+<doc>Test user info display if user exists</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:47:24.796957" elapsed="0.005454"/>
+</test>
+<test id="s1-t2" name="Verify Table Info Display" line="12">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T00:47:24.804709" level="INFO">&amp;{TABLE} = { tableid=5 | capacity=4 | status=Free }</msg>
+<var>&amp;{TABLE}</var>
+<arg>tableid=5</arg>
+<arg>capacity=4</arg>
+<arg>status=Free</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T00:47:24.804148" elapsed="0.000633"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${TABLE}</arg>
+<arg>tableid</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-10-20T00:47:24.805147" elapsed="0.000264"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${TABLE}</arg>
+<arg>capacity</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-10-20T00:47:24.805773" elapsed="0.000281"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${TABLE}</arg>
+<arg>status</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-10-20T00:47:24.806319" elapsed="0.000194"/>
+</kw>
+<doc>Test table info display</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:47:24.803282" elapsed="0.003699"/>
+</test>
+<test id="s1-t3" name="Verify Status Display Logic" line="20">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T00:47:24.808812" level="INFO">&amp;{TABLE_FREE} = { status=Free }</msg>
+<var>&amp;{TABLE_FREE}</var>
+<arg>status=Free</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T00:47:24.808404" elapsed="0.000464"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T00:47:24.809451" level="INFO">&amp;{TABLE_IN_USE} = { status=In use }</msg>
+<var>&amp;{TABLE_IN_USE}</var>
+<arg>status=In use</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T00:47:24.809184" elapsed="0.000307"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T00:47:24.810193" level="INFO">&amp;{TABLE_RESERVED} = { status=Already reserved }</msg>
+<var>&amp;{TABLE_RESERVED}</var>
+<arg>status=Already reserved</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T00:47:24.809851" elapsed="0.000397"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-20T00:47:24.811252" level="INFO">${status_free} = พร้อมให้บริการ</msg>
+<var>${status_free}</var>
+<arg>'พร้อมให้บริการ' if '${TABLE_FREE}[status]' == 'Free' else 'Other'</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-20T00:47:24.810660" elapsed="0.000639"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-20T00:47:24.812346" level="INFO">${status_in_use} = กำลังใช้งาน</msg>
+<var>${status_in_use}</var>
+<arg>'กำลังใช้งาน' if '${TABLE_IN_USE}[status]' == 'In use' else 'Other'</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-20T00:47:24.811738" elapsed="0.000682"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-20T00:47:24.813667" level="INFO">${status_reserved} = จองแล้ว</msg>
+<var>${status_reserved}</var>
+<arg>'จองแล้ว' if '${TABLE_RESERVED}[status]' == 'Already reserved' else 'Other'</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-20T00:47:24.812946" elapsed="0.000784"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${status_free}</arg>
+<arg>พร้อมให้บริการ</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T00:47:24.814273" elapsed="0.000645"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${status_in_use}</arg>
+<arg>กำลังใช้งาน</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T00:47:24.815613" elapsed="0.000429"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${status_reserved}</arg>
+<arg>จองแล้ว</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T00:47:24.816494" elapsed="0.000314"/>
+</kw>
+<doc>Test status text based on value</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:47:24.807675" elapsed="0.009787"/>
+</test>
+<test id="s1-t4" name="Verify Guest Options Generation" line="33">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T00:47:24.819540" level="INFO">&amp;{TABLE} = { capacity=4 }</msg>
+<var>&amp;{TABLE}</var>
+<arg>capacity=4</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T00:47:24.819119" elapsed="0.000484"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T00:47:24.820397" level="INFO">${max_guests} = 4</msg>
+<var>${max_guests}</var>
+<arg>${TABLE}[capacity]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T00:47:24.820064" elapsed="0.000373"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-20T00:47:24.821317" level="INFO">${expected_options} = [1, 2, 3, 4]</msg>
+<var>${expected_options}</var>
+<arg>list(range(1, ${max_guests} + 1))</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-20T00:47:24.820842" elapsed="0.000524"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-20T00:47:24.821979" level="INFO">${actual_options} = [1, 2, 3, 4]</msg>
+<var>${actual_options}</var>
+<arg>list(range(1, ${max_guests} + 1))</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-20T00:47:24.821660" elapsed="0.000361"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual_options}</arg>
+<arg>${expected_options}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T00:47:24.822385" elapsed="0.000436"/>
+</kw>
+<doc>Test guest options from 1 to capacity</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:47:24.818193" elapsed="0.004947"/>
+</test>
+<test id="s1-t5" name="Verify Time Options Disable Past" line="43">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-20T00:47:24.825696" level="INFO">${selected_date} = 2025-10-20</msg>
+<var>${selected_date}</var>
+<arg>datetime.date(2025, 10, 20)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-20T00:47:24.825255" elapsed="0.000497"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-20T00:47:24.826479" level="INFO">${current_time} = 2025-10-20 12:00:00</msg>
+<var>${current_time}</var>
+<arg>datetime.datetime(2025, 10, 20, 12, 0)</arg>
+<arg>modules=datetime</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-20T00:47:24.826091" elapsed="0.000426"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-10-20T00:47:24.827821" level="INFO">@{times} = [ 11:00 | 12:00 | 13:00 ]</msg>
+<var>@{times}</var>
+<arg>11:00</arg>
+<arg>12:00</arg>
+<arg>13:00</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-10-20T00:47:24.826887" elapsed="0.000999"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T00:47:24.828521" level="INFO">${past_count} = 1</msg>
+<var>${past_count}</var>
+<arg>1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T00:47:24.828314" elapsed="0.000244"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${past_count} &gt;= 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T00:47:24.828937" elapsed="0.000512"/>
+</kw>
+<doc>Test disable past times if today selected</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:47:24.824332" elapsed="0.005611"/>
+</test>
+<test id="s1-t6" name="Verify Form Validation Empty Fields" line="52">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T00:47:24.832028" level="INFO">${date} = ''</msg>
+<var>${date}</var>
+<arg>''</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T00:47:24.831655" elapsed="0.000444"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T00:47:24.833068" level="INFO">${time} = ''</msg>
+<var>${time}</var>
+<arg>''</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T00:47:24.832696" elapsed="0.000431"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T00:47:24.834046" level="INFO">${guests} = ''</msg>
+<var>${guests}</var>
+<arg>''</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T00:47:24.833604" elapsed="0.000504"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-20T00:47:24.835139" level="INFO">${is_empty} = True</msg>
+<var>${is_empty}</var>
+<arg>not (${date} or ${time} or ${guests})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-20T00:47:24.834585" elapsed="0.000606"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${is_empty} == True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T00:47:24.835688" elapsed="0.000559"/>
+</kw>
+<doc>Test validation fails if empty</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:47:24.830779" elapsed="0.005871"/>
+</test>
+<test id="s1-t7" name="Verify Guests Exceeds Capacity" line="61">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T00:47:24.838340" level="INFO">${guests} = 5</msg>
+<var>${guests}</var>
+<arg>5</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T00:47:24.838035" elapsed="0.000363"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T00:47:24.838978" level="INFO">${capacity} = 4</msg>
+<var>${capacity}</var>
+<arg>4</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T00:47:24.838743" elapsed="0.000282"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-20T00:47:24.839685" level="INFO">${exceeds} = True</msg>
+<var>${exceeds}</var>
+<arg>${guests} &gt; ${capacity}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-20T00:47:24.839280" elapsed="0.000455"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${exceeds} == True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T00:47:24.840171" elapsed="0.000526"/>
+</kw>
+<doc>Test guests &gt; capacity fails</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:47:24.837238" elapsed="0.003813"/>
+</test>
+<status status="PASS" start="2025-10-20T00:47:24.735266" elapsed="0.106678"/>
+</suite>
+<statistics>
+<total>
+<stat pass="7" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="7" fail="0" skip="0">Logic</stat>
+</tag>
+<suite>
+<stat name="Reservetable" id="s1" pass="7" fail="0" skip="0">Reservetable</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

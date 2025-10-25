@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.9 on win32)" generated="2025-10-20T00:55:09.120441" rpa="false" schemaversion="5">
+<suite id="s1" name="Welcomemanager" source="C:\ShabuProject\target\test-classes\welcomemanager\welcomemanager.robot">
+<test id="s1-t1" name="Verify Welcome Card Display" line="5">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T00:55:09.203919" level="INFO">${formatted_date} = 20/10/2025</msg>
+<var>${formatted_date}</var>
+<arg>20/10/2025</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T00:55:09.203330" elapsed="0.000681"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-20T00:55:09.205583" level="INFO">${has_date} = True</msg>
+<var>${has_date}</var>
+<arg>'${formatted_date}' != ''</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-20T00:55:09.204710" elapsed="0.000963"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${has_date} == True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T00:55:09.206166" elapsed="0.000643"/>
+</kw>
+<doc>Test welcome card shows greeting and date</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:55:09.200846" elapsed="0.006409"/>
+</test>
+<test id="s1-t2" name="Verify Action Buttons Grid Structure" line="12">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-10-20T00:55:09.210161" level="INFO">@{actions} = [ Employees | Food | Tables | Bills | Orders | Logout ]</msg>
+<var>@{actions}</var>
+<arg>Employees</arg>
+<arg>Food</arg>
+<arg>Tables</arg>
+<arg>Bills</arg>
+<arg>Orders</arg>
+<arg>Logout</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-10-20T00:55:09.209520" elapsed="0.000722"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-10-20T00:55:09.211128" level="INFO">Length is 6.</msg>
+<msg time="2025-10-20T00:55:09.211275" level="INFO">${action_count} = 6</msg>
+<var>${action_count}</var>
+<arg>${actions}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-10-20T00:55:09.210842" elapsed="0.000476"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${action_count} == 6</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T00:55:09.211733" elapsed="0.000567"/>
+</kw>
+<doc>Test 6 action buttons exist</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:55:09.208114" elapsed="0.004572"/>
+</test>
+<test id="s1-t3" name="Verify Manage Employees Link" line="19">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T00:55:09.214875" level="INFO">${employees_link} = ManagerEmployee</msg>
+<var>${employees_link}</var>
+<arg>ManagerEmployee</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T00:55:09.214502" elapsed="0.000436"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${employees_link}</arg>
+<arg>ManagerEmployee</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T00:55:09.215373" elapsed="0.000399"/>
+</kw>
+<doc>Test employees link to ManagerEmployee</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:55:09.213554" elapsed="0.002568"/>
+</test>
+<test id="s1-t4" name="Verify Manage Food Link" line="25">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T00:55:09.217764" level="INFO">${food_link} = ListAllMenuFood</msg>
+<var>${food_link}</var>
+<arg>ListAllMenuFood</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T00:55:09.217504" elapsed="0.000307"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${food_link}</arg>
+<arg>ListAllMenuFood</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T00:55:09.218257" elapsed="0.000451"/>
+</kw>
+<doc>Test food link to ListAllMenuFood</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:55:09.216818" elapsed="0.002438"/>
+</test>
+<test id="s1-t5" name="Verify Manage Tables Link" line="31">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T00:55:09.221420" level="INFO">${tables_link} = ManageTable</msg>
+<var>${tables_link}</var>
+<arg>ManageTable</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T00:55:09.221083" elapsed="0.000402"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${tables_link}</arg>
+<arg>ManageTable</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T00:55:09.221871" elapsed="0.000360"/>
+</kw>
+<doc>Test tables link to ManageTable</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:55:09.220222" elapsed="0.002379"/>
+</test>
+<test id="s1-t6" name="Verify View Bills Link" line="37">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T00:55:09.224437" level="INFO">${bills_link} = listuser</msg>
+<var>${bills_link}</var>
+<arg>listuser</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T00:55:09.224152" elapsed="0.000333"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${bills_link}</arg>
+<arg>listuser</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T00:55:09.224912" elapsed="0.000352"/>
+</kw>
+<doc>Test bills link to listuser</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:55:09.223218" elapsed="0.002594"/>
+</test>
+<test id="s1-t7" name="Verify Manage Orders Link" line="43">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T00:55:09.227664" level="INFO">${orders_link} = Addcoursepage</msg>
+<var>${orders_link}</var>
+<arg>Addcoursepage</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T00:55:09.227311" elapsed="0.000416"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${orders_link}</arg>
+<arg>Addcoursepage</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T00:55:09.228094" elapsed="0.000344"/>
+</kw>
+<doc>Test orders link to Addcoursepage</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:55:09.226526" elapsed="0.002258"/>
+</test>
+<test id="s1-t8" name="Verify Logout Link" line="49">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T00:55:09.230733" level="INFO">${logout_link} = logoutmanager</msg>
+<var>${logout_link}</var>
+<arg>logoutmanager</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T00:55:09.230298" elapsed="0.000504"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${logout_link}</arg>
+<arg>logoutmanager</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T00:55:09.231228" elapsed="0.000358"/>
+</kw>
+<doc>Test logout link to logoutmanager</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:55:09.229392" elapsed="0.002533"/>
+</test>
+<test id="s1-t9" name="Verify Page Title Display" line="55">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T00:55:09.235379" level="INFO">${title} = Home | Manager</msg>
+<var>${title}</var>
+<arg>Home | Manager</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T00:55:09.233838" elapsed="0.001677"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${title}</arg>
+<arg>Home | Manager</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T00:55:09.236319" elapsed="0.000609"/>
+</kw>
+<doc>Test page title</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:55:09.232755" elapsed="0.004691"/>
+</test>
+<status status="PASS" start="2025-10-20T00:55:09.124293" elapsed="0.114806"/>
+</suite>
+<statistics>
+<total>
+<stat pass="9" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="9" fail="0" skip="0">Logic</stat>
+</tag>
+<suite>
+<stat name="Welcomemanager" id="s1" pass="9" fail="0" skip="0">Welcomemanager</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

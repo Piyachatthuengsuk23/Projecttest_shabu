@@ -1,0 +1,778 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.9 on win32)" generated="2025-10-20T00:27:38.479713" rpa="false" schemaversion="5">
+<suite id="s1" name="Register Customer" source="C:\ShabuProject\target\test-classes\register_customer\register_customer.robot">
+<test id="s1-t1" name="Verify Registration Page Loads Successfully" line="41">
+<kw name="Open Browser With Options" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-20T00:27:39.152753" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001830BA0E7B0&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>modules=sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-20T00:27:39.151973" elapsed="0.000876"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-20T00:27:39.153127" elapsed="0.000259"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gcm</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-20T00:27:39.153558" elapsed="0.000222"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-10-20T00:27:39.154980" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8080/Zproject_shabu2/regiscus'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-10-20T00:27:39.154044" elapsed="5.216890"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-10-20T00:27:44.371543" elapsed="0.046896"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-10-20T00:27:44.418977" elapsed="0.003973"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-20T00:27:46.424672" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-20T00:27:44.423319" elapsed="2.001659"/>
+</kw>
+<status status="PASS" start="2025-10-20T00:27:39.149888" elapsed="7.275365"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>css=button.btn-primary-modern</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-20T00:27:46.425878" elapsed="0.032168"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-10-20T00:27:46.487861" level="INFO">Current page contains text 'ลงทะเบียนลูกค้า'.</msg>
+<arg>ลงทะเบียนลูกค้า</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-10-20T00:27:46.458722" elapsed="0.029357"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-20T00:27:48.489985" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-20T00:27:46.488794" elapsed="2.001488"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-10-20T00:27:48.491101" elapsed="2.287649"/>
+</kw>
+<status status="PASS" start="2025-10-20T00:27:39.147701" elapsed="11.631470"/>
+</test>
+<test id="s1-t2" name="Test Successful Form Submission" line="46">
+<kw name="Open Browser With Options" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-20T00:27:50.782730" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001830BAA1310&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>modules=sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-20T00:27:50.781990" elapsed="0.000827"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-20T00:27:50.783138" elapsed="0.000316"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gcm</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-20T00:27:50.783660" elapsed="0.000263"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-10-20T00:27:50.784725" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8080/Zproject_shabu2/regiscus'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-10-20T00:27:50.784178" elapsed="1.743907"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-10-20T00:27:52.528556" elapsed="0.370104"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-10-20T00:27:52.899113" elapsed="0.002372"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-20T00:27:54.902806" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-20T00:27:52.901959" elapsed="2.001139"/>
+</kw>
+<status status="PASS" start="2025-10-20T00:27:50.781344" elapsed="4.121967"/>
+</kw>
+<kw name="Fill Registration Form">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=input#username</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-20T00:27:54.905133" elapsed="0.059983"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-20T00:27:54.965910" level="INFO">Typing text 'testuser' into text field 'css=input#username'.</msg>
+<arg>css=input#username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-20T00:27:54.965481" elapsed="0.239477"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-20T00:27:56.206722" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-20T00:27:55.205522" elapsed="1.001463"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-20T00:27:56.207925" level="INFO">Typing text 'Password123' into text field 'css=input#password'.</msg>
+<arg>css=input#password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-20T00:27:56.207358" elapsed="0.155309"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-20T00:27:57.363494" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-20T00:27:56.362998" elapsed="1.000777"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-20T00:27:57.364925" level="INFO">Typing text 'Test Name' into text field 'css=input#name'.</msg>
+<arg>css=input#name</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-20T00:27:57.364196" elapsed="0.144617"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-20T00:27:58.510513" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-20T00:27:57.509633" elapsed="1.001170"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-20T00:27:58.511792" level="INFO">Typing text '0812345678' into text field 'css=input#phonenumber'.</msg>
+<arg>css=input#phonenumber</arg>
+<arg>${phone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-20T00:27:58.511190" elapsed="0.138064"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-20T00:27:59.650453" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-20T00:27:58.649735" elapsed="1.000984"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-20T00:27:59.651744" level="INFO">Typing text '25' into text field 'css=input#age'.</msg>
+<arg>css=input#age</arg>
+<arg>${age}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-20T00:27:59.651128" elapsed="0.138571"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-20T00:28:00.790933" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-20T00:27:59.790138" elapsed="1.001070"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-20T00:28:00.792287" level="INFO">Typing text 'test@example.com' into text field 'css=input#email'.</msg>
+<arg>css=input#email</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-20T00:28:00.791631" elapsed="0.158170"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-20T00:28:01.950834" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-20T00:28:00.950264" elapsed="1.000846"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-10-20T00:28:01.952611" level="INFO">Executing JavaScript:
+window.scrollTo(0, document.body.scrollHeight);
+Without any arguments.</msg>
+<arg>window.scrollTo(0, document.body.scrollHeight);</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-10-20T00:28:01.951512" elapsed="0.011410"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-20T00:28:02.964131" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-20T00:28:01.963287" elapsed="1.001087"/>
+</kw>
+<arg>testuser</arg>
+<arg>Password123</arg>
+<arg>Test Name</arg>
+<arg>0812345678</arg>
+<arg>25</arg>
+<arg>test@example.com</arg>
+<status status="PASS" start="2025-10-20T00:27:54.904176" elapsed="8.060415"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=button.btn-primary-modern</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-20T00:28:02.965331" elapsed="0.035612"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>css=button.btn-primary-modern</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-10-20T00:28:03.001507" elapsed="0.035056"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-20T00:28:04.038143" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-20T00:28:03.037168" elapsed="1.001257"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-20T00:28:04.039656" level="INFO">Clicking button 'css=button.btn-primary-modern'.</msg>
+<arg>css=button.btn-primary-modern</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-20T00:28:04.039071" elapsed="0.521285"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-20T00:28:07.561718" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-20T00:28:04.561001" elapsed="3.000985"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-10-20T00:28:07.562963" elapsed="2.304338"/>
+</kw>
+<status status="PASS" start="2025-10-20T00:27:50.780126" elapsed="19.087663"/>
+</test>
+<test id="s1-t3" name="Test Missing Required Fields" line="55">
+<kw name="Open Browser With Options" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-20T00:28:09.871926" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001830BAA02D0&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>modules=sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-20T00:28:09.870964" elapsed="0.001056"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-20T00:28:09.872394" elapsed="0.000446"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gcm</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-20T00:28:09.873183" elapsed="0.000517"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-10-20T00:28:09.874725" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8080/Zproject_shabu2/regiscus'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-10-20T00:28:09.874089" elapsed="2.719023"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-10-20T00:28:12.593579" elapsed="0.048247"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-10-20T00:28:12.642162" elapsed="0.002300"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-20T00:28:14.645350" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-20T00:28:12.644780" elapsed="2.000835"/>
+</kw>
+<status status="PASS" start="2025-10-20T00:28:09.870254" elapsed="4.775600"/>
+</kw>
+<kw name="Fill Registration Form">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=input#username</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-20T00:28:14.647948" elapsed="0.046685"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-20T00:28:14.695563" level="INFO">Typing text '' into text field 'css=input#username'.</msg>
+<arg>css=input#username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-20T00:28:14.695007" elapsed="0.152385"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-20T00:28:15.848903" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-20T00:28:14.847729" elapsed="1.001470"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-20T00:28:15.850645" level="INFO">Typing text 'Password123' into text field 'css=input#password'.</msg>
+<arg>css=input#password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-20T00:28:15.849668" elapsed="0.153486"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-20T00:28:17.004091" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-20T00:28:16.003504" elapsed="1.000860"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-20T00:28:17.005358" level="INFO">Typing text 'Test Name' into text field 'css=input#name'.</msg>
+<arg>css=input#name</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-20T00:28:17.004758" elapsed="0.153904"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-20T00:28:18.159680" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-20T00:28:17.159053" elapsed="1.000823"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-20T00:28:18.160613" level="INFO">Typing text '0812345678' into text field 'css=input#phonenumber'.</msg>
+<arg>css=input#phonenumber</arg>
+<arg>${phone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-20T00:28:18.160164" elapsed="0.143738"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-20T00:28:19.305923" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-20T00:28:18.304374" elapsed="1.001833"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-20T00:28:19.307103" level="INFO">Typing text '25' into text field 'css=input#age'.</msg>
+<arg>css=input#age</arg>
+<arg>${age}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-20T00:28:19.306555" elapsed="0.131649"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-20T00:28:20.439371" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-20T00:28:19.438629" elapsed="1.001054"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-20T00:28:20.440482" level="INFO">Typing text 'test@example.com' into text field 'css=input#email'.</msg>
+<arg>css=input#email</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-20T00:28:20.440015" elapsed="0.156556"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-20T00:28:21.597889" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-20T00:28:20.597084" elapsed="1.001061"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-10-20T00:28:21.600943" level="INFO">Executing JavaScript:
+window.scrollTo(0, document.body.scrollHeight);
+Without any arguments.</msg>
+<arg>window.scrollTo(0, document.body.scrollHeight);</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-10-20T00:28:21.598485" elapsed="0.011132"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-20T00:28:22.610882" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-20T00:28:21.609934" elapsed="1.001210"/>
+</kw>
+<arg>${EMPTY}</arg>
+<arg>Password123</arg>
+<arg>Test Name</arg>
+<arg>0812345678</arg>
+<arg>25</arg>
+<arg>test@example.com</arg>
+<status status="PASS" start="2025-10-20T00:28:14.646810" elapsed="7.964568"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=button.btn-primary-modern</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-20T00:28:22.611992" elapsed="0.029909"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-20T00:28:23.643063" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-20T00:28:22.642520" elapsed="1.000823"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-20T00:28:23.644496" level="INFO">Clicking button 'css=button.btn-primary-modern'.</msg>
+<arg>css=button.btn-primary-modern</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-20T00:28:23.643990" elapsed="0.139696"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-20T00:28:23.809481" level="INFO">Current page contains element 'css=input#username:invalid'.</msg>
+<arg>css=input#username:invalid</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-10-20T00:28:23.784371" elapsed="0.025310"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-20T00:28:25.811479" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-20T00:28:23.810399" elapsed="2.001338"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-10-20T00:28:25.812609" elapsed="2.287756"/>
+</kw>
+<status status="PASS" start="2025-10-20T00:28:09.869081" elapsed="18.231733"/>
+</test>
+<test id="s1-t4" name="Test Invalid Email Format" line="63">
+<kw name="Open Browser With Options" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-20T00:28:28.104645" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001830B9AAD70&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>modules=sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-20T00:28:28.103851" elapsed="0.000909"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-20T00:28:28.105213" elapsed="0.000391"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gcm</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-20T00:28:28.105805" elapsed="0.000196"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-10-20T00:28:28.106616" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8080/Zproject_shabu2/regiscus'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-10-20T00:28:28.106185" elapsed="2.380695"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-10-20T00:28:30.487358" elapsed="0.053401"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-10-20T00:28:30.541239" elapsed="0.003609"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-20T00:28:32.546388" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-20T00:28:30.545364" elapsed="2.001296"/>
+</kw>
+<status status="PASS" start="2025-10-20T00:28:28.103084" elapsed="4.444130"/>
+</kw>
+<kw name="Fill Registration Form">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=input#username</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-20T00:28:32.549282" elapsed="0.043704"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-20T00:28:32.593821" level="INFO">Typing text 'testuser' into text field 'css=input#username'.</msg>
+<arg>css=input#username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-20T00:28:32.593343" elapsed="0.172586"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-20T00:28:33.769214" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-20T00:28:32.766419" elapsed="1.003213"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-20T00:28:33.770893" level="INFO">Typing text 'Password123' into text field 'css=input#password'.</msg>
+<arg>css=input#password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-20T00:28:33.770096" elapsed="0.589382"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-20T00:28:35.360520" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-20T00:28:34.359882" elapsed="1.000915"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-20T00:28:35.361844" level="INFO">Typing text 'Test Name' into text field 'css=input#name'.</msg>
+<arg>css=input#name</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-20T00:28:35.361210" elapsed="0.150999"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-20T00:28:36.513791" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-20T00:28:35.512684" elapsed="1.001360"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-20T00:28:36.515119" level="INFO">Typing text '0812345678' into text field 'css=input#phonenumber'.</msg>
+<arg>css=input#phonenumber</arg>
+<arg>${phone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-20T00:28:36.514450" elapsed="0.149541"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-20T00:28:37.665591" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-20T00:28:36.664444" elapsed="1.001398"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-20T00:28:37.666814" level="INFO">Typing text '25' into text field 'css=input#age'.</msg>
+<arg>css=input#age</arg>
+<arg>${age}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-20T00:28:37.666211" elapsed="0.119017"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-20T00:28:38.786660" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-20T00:28:37.785677" elapsed="1.001284"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-20T00:28:38.787961" level="INFO">Typing text 'invalid-email' into text field 'css=input#email'.</msg>
+<arg>css=input#email</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-20T00:28:38.787376" elapsed="0.138364"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-20T00:28:39.926556" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-20T00:28:38.926062" elapsed="1.000754"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-10-20T00:28:39.927957" level="INFO">Executing JavaScript:
+window.scrollTo(0, document.body.scrollHeight);
+Without any arguments.</msg>
+<arg>window.scrollTo(0, document.body.scrollHeight);</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-10-20T00:28:39.927135" elapsed="0.009881"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-20T00:28:40.938280" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-20T00:28:39.937375" elapsed="1.001166"/>
+</kw>
+<arg>testuser</arg>
+<arg>Password123</arg>
+<arg>Test Name</arg>
+<arg>0812345678</arg>
+<arg>25</arg>
+<arg>invalid-email</arg>
+<status status="PASS" start="2025-10-20T00:28:32.548188" elapsed="8.390605"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=button.btn-primary-modern</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-20T00:28:40.939416" elapsed="0.031128"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-20T00:28:41.972018" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-20T00:28:40.971080" elapsed="1.001234"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-20T00:28:41.973533" level="INFO">Clicking button 'css=button.btn-primary-modern'.</msg>
+<arg>css=button.btn-primary-modern</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-20T00:28:41.972964" elapsed="0.138824"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-20T00:28:42.133027" level="INFO">Current page contains element 'css=input#email:invalid'.</msg>
+<arg>css=input#email:invalid</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-10-20T00:28:42.112347" elapsed="0.020921"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-20T00:28:44.135232" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-20T00:28:42.133924" elapsed="2.001798"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-10-20T00:28:44.136740" elapsed="2.295255"/>
+</kw>
+<status status="PASS" start="2025-10-20T00:28:28.101859" elapsed="18.330633"/>
+</test>
+<test id="s1-t5" name="Test Login Link Navigation" line="71">
+<kw name="Open Browser With Options" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-20T00:28:46.435892" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001830B9AB950&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>modules=sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-20T00:28:46.435152" elapsed="0.000829"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-20T00:28:46.436291" elapsed="0.000323"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gcm</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-20T00:28:46.436831" elapsed="0.000280"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-10-20T00:28:46.438596" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8080/Zproject_shabu2/regiscus'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-10-20T00:28:46.437872" elapsed="1.905762"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-10-20T00:28:48.344052" elapsed="0.042031"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-10-20T00:28:48.386440" elapsed="0.002174"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-20T00:28:50.390223" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-20T00:28:48.389023" elapsed="2.001480"/>
+</kw>
+<status status="PASS" start="2025-10-20T00:28:46.434560" elapsed="3.956252"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-10-20T00:28:50.392565" level="INFO">Executing JavaScript:
+window.scrollTo(0, document.body.scrollHeight / 2);
+Without any arguments.</msg>
+<arg>window.scrollTo(0, document.body.scrollHeight / 2);</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-10-20T00:28:50.391565" elapsed="0.012816"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-20T00:28:51.405911" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-20T00:28:50.405036" elapsed="1.001150"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=a[href='gotologin']</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-20T00:28:51.406974" elapsed="0.057917"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>css=a[href='gotologin']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-10-20T00:28:51.465573" elapsed="0.306789"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>css=a[href='gotologin']</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-10-20T00:28:51.773036" elapsed="0.045872"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-20T00:28:52.820463" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-20T00:28:51.819566" elapsed="1.001166"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-20T00:28:52.822005" level="INFO">Clicking element 'css=a[href='gotologin']'.</msg>
+<arg>css=a[href='gotologin']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-20T00:28:52.821462" elapsed="0.893655"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-20T00:28:55.716730" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-20T00:28:53.715806" elapsed="2.001190"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>เข้าสู่ระบบ</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-20T00:28:55.717815" elapsed="0.027313"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-10-20T00:28:55.745814" elapsed="2.282895"/>
+</kw>
+<status status="PASS" start="2025-10-20T00:28:46.433481" elapsed="11.595619"/>
+</test>
+<status status="PASS" start="2025-10-20T00:27:38.483680" elapsed="79.547023"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Register Customer" id="s1" pass="5" fail="0" skip="0">Register Customer</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-10-20T00:27:39.144565" level="ERROR">Error in file 'C:\ShabuProject\target\test-classes\register_customer\register_customer.robot' on line 9: Setting variable '${EMPTY}' failed: Recursive variable definition.</msg>
+</errors>
+</robot>

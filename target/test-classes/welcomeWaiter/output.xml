@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.9 on win32)" generated="2025-10-20T00:56:21.782495" rpa="false" schemaversion="5">
+<suite id="s1" name="welcomeWaiter" source="C:\ShabuProject\target\test-classes\welcomeWaiter\welcomeWaiter.robot">
+<test id="s1-t1" name="Verify Welcome Message Display" line="5">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T00:56:21.861380" level="INFO">${welcome} = Welcome I kuy</msg>
+<var>${welcome}</var>
+<arg>Welcome I kuy</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T00:56:21.860734" elapsed="0.000751"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${welcome}</arg>
+<arg>Welcome I kuy</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T00:56:21.862223" elapsed="0.000730"/>
+</kw>
+<doc>Test welcome message exists</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:56:21.858358" elapsed="0.005299"/>
+</test>
+<test id="s1-t2" name="Verify User Username Display" line="11">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T00:56:21.866956" level="INFO">&amp;{USER} = { empUsername=admin }</msg>
+<var>&amp;{USER}</var>
+<arg>empUsername=admin</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T00:56:21.865984" elapsed="0.001075"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${USER}</arg>
+<arg>empUsername</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-10-20T00:56:21.867582" elapsed="0.000400"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${USER}[empUsername]</arg>
+<arg>admin</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T00:56:21.868365" elapsed="0.000425"/>
+</kw>
+<doc>Test username property</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:56:21.864784" elapsed="0.004442"/>
+</test>
+<test id="s1-t3" name="Verify User Name Display" line="18">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T00:56:21.871452" level="INFO">&amp;{USER} = { empname=John Doe }</msg>
+<var>&amp;{USER}</var>
+<arg>empname=John Doe</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T00:56:21.870938" elapsed="0.000602"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${USER}</arg>
+<arg>empname</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-10-20T00:56:21.872022" elapsed="0.000375"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${USER}[empname]</arg>
+<arg>John Doe</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T00:56:21.872855" elapsed="0.000543"/>
+</kw>
+<doc>Test name property</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:56:21.869922" elapsed="0.003947"/>
+</test>
+<test id="s1-t4" name="Verify User Position Display" line="25">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T00:56:21.876577" level="INFO">&amp;{USER} = { position=Manager }</msg>
+<var>&amp;{USER}</var>
+<arg>position=Manager</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T00:56:21.875881" elapsed="0.000801"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${USER}</arg>
+<arg>position</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-10-20T00:56:21.877260" elapsed="0.000468"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${USER}[position]</arg>
+<arg>Manager</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T00:56:21.878219" elapsed="0.000689"/>
+</kw>
+<doc>Test position property</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:56:21.874739" elapsed="0.004822"/>
+</test>
+<test id="s1-t5" name="Verify Page Title Display" line="32">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T00:56:21.881637" level="INFO">${title} = Insert title here</msg>
+<var>${title}</var>
+<arg>Insert title here</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T00:56:21.881255" elapsed="0.000453"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${title}</arg>
+<arg>Insert title here</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T00:56:21.882236" elapsed="0.000511"/>
+</kw>
+<doc>Test page title</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:56:21.880366" elapsed="0.002824"/>
+</test>
+<status status="PASS" start="2025-10-20T00:56:21.786069" elapsed="0.098174"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="5" fail="0" skip="0">Logic</stat>
+</tag>
+<suite>
+<stat name="welcomeWaiter" id="s1" pass="5" fail="0" skip="0">welcomeWaiter</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

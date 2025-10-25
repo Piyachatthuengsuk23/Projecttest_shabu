@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.9 on win32)" generated="2025-10-20T00:43:35.786179" rpa="false" schemaversion="5">
+<suite id="s1" name="orderfoodCuatomer" source="C:\ShabuProject\target\test-classes\orderfoodCuatomer\orderfoodCuatomer.robot">
+<test id="s1-t1" name="Verify Empty Food Types Show No Sections" line="5">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-10-20T00:43:35.882241" level="INFO">${food_types} = []</msg>
+<var>${food_types}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-10-20T00:43:35.881582" elapsed="0.000783"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-10-20T00:43:35.883603" level="INFO">Length is 0.</msg>
+<msg time="2025-10-20T00:43:35.883850" level="INFO">${type_count} = 0</msg>
+<var>${type_count}</var>
+<arg>${food_types}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-10-20T00:43:35.883119" elapsed="0.000789"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${type_count} == 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T00:43:35.884535" elapsed="0.000969"/>
+</kw>
+<doc>Test empty foodTypeList shows no sections</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:43:35.879257" elapsed="0.006853"/>
+</test>
+<test id="s1-t2" name="Verify Single Food Type Display" line="12">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T00:43:35.889085" level="INFO">&amp;{TYPE1} = { foodtypeId=1 | foodtypeName=Appetizers }</msg>
+<var>&amp;{TYPE1}</var>
+<arg>foodtypeId=1</arg>
+<arg>foodtypeName=Appetizers</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T00:43:35.888239" elapsed="0.000940"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-10-20T00:43:35.890197" level="INFO">${food_types} = [{'foodtypeId': '1', 'foodtypeName': 'Appetizers'}]</msg>
+<var>${food_types}</var>
+<arg>${TYPE1}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-10-20T00:43:35.889727" elapsed="0.000549"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-10-20T00:43:35.891212" level="INFO">Length is 1.</msg>
+<msg time="2025-10-20T00:43:35.891400" level="INFO">${type_count} = 1</msg>
+<var>${type_count}</var>
+<arg>${food_types}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-10-20T00:43:35.890842" elapsed="0.000610"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${type_count} == 1</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T00:43:35.891910" elapsed="0.000640"/>
+</kw>
+<doc>Test single food type logic</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:43:35.886969" elapsed="0.006086"/>
+</test>
+<test id="s1-t3" name="Verify Multiple Food Types Display" line="20">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T00:43:35.895602" level="INFO">&amp;{TYPE1} = { foodtypeId=1 | foodtypeName=Appetizers }</msg>
+<var>&amp;{TYPE1}</var>
+<arg>foodtypeId=1</arg>
+<arg>foodtypeName=Appetizers</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T00:43:35.894951" elapsed="0.000739"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T00:43:35.896814" level="INFO">&amp;{TYPE2} = { foodtypeId=2 | foodtypeName=Mains }</msg>
+<var>&amp;{TYPE2}</var>
+<arg>foodtypeId=2</arg>
+<arg>foodtypeName=Mains</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T00:43:35.896274" elapsed="0.000647"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-10-20T00:43:35.897938" level="INFO">${food_types} = [{'foodtypeId': '1', 'foodtypeName': 'Appetizers'}, {'foodtypeId': '2', 'foodtypeName': 'Mains'}]</msg>
+<var>${food_types}</var>
+<arg>${TYPE1}</arg>
+<arg>${TYPE2}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-10-20T00:43:35.897451" elapsed="0.000550"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-10-20T00:43:35.898691" level="INFO">Length is 2.</msg>
+<msg time="2025-10-20T00:43:35.898901" level="INFO">${type_count} = 2</msg>
+<var>${type_count}</var>
+<arg>${food_types}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-10-20T00:43:35.898410" elapsed="0.000552"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${type_count} == 2</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T00:43:35.899431" elapsed="0.000668"/>
+</kw>
+<doc>Test multiple food types logic</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:43:35.894006" elapsed="0.006572"/>
+</test>
+<test id="s1-t4" name="Verify Skip Special Food Type" line="29">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T00:43:35.903453" level="INFO">&amp;{TYPE_SPECIAL} = { foodtypeId=99 | foodtypeName=ต่อคน }</msg>
+<var>&amp;{TYPE_SPECIAL}</var>
+<arg>foodtypeId=99</arg>
+<arg>foodtypeName=ต่อคน</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T00:43:35.902668" elapsed="0.000856"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T00:43:35.904342" level="INFO">&amp;{TYPE_NORMAL} = { foodtypeId=1 | foodtypeName=Appetizers }</msg>
+<var>&amp;{TYPE_NORMAL}</var>
+<arg>foodtypeId=1</arg>
+<arg>foodtypeName=Appetizers</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T00:43:35.903958" elapsed="0.000426"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-10-20T00:43:35.905235" level="INFO">${food_types} = [{'foodtypeId': '99', 'foodtypeName': 'ต่อคน'}, {'foodtypeId': '1', 'foodtypeName': 'Appetizers'}]</msg>
+<var>${food_types}</var>
+<arg>${TYPE_SPECIAL}</arg>
+<arg>${TYPE_NORMAL}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-10-20T00:43:35.904778" elapsed="0.000502"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-10-20T00:43:35.906077" level="INFO">${normal_types} = []</msg>
+<var>${normal_types}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-10-20T00:43:35.905756" elapsed="0.000385"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${type}[foodtypeName]' != 'ต่อคน'</arg>
+<arg>Append To List</arg>
+<arg>${normal_types}</arg>
+<arg>${type}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-10-20T00:43:35.907311" elapsed="0.000562"/>
+</kw>
+<var name="${type}">{'foodtypeId': '99', 'foodtypeName': 'ต่อคน'}</var>
+<status status="PASS" start="2025-10-20T00:43:35.906999" elapsed="0.001014"/>
+</iter>
+<iter>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append To List" owner="Collections">
+<arg>${normal_types}</arg>
+<arg>${type}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-10-20T00:43:35.909100" elapsed="0.000387"/>
+</kw>
+<arg>'${type}[foodtypeName]' != 'ต่อคน'</arg>
+<arg>Append To List</arg>
+<arg>${normal_types}</arg>
+<arg>${type}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-10-20T00:43:35.908571" elapsed="0.001068"/>
+</kw>
+<var name="${type}">{'foodtypeId': '1', 'foodtypeName': 'Appetizers'}</var>
+<status status="PASS" start="2025-10-20T00:43:35.908335" elapsed="0.001416"/>
+</iter>
+<var>${type}</var>
+<value>@{food_types}</value>
+<status status="PASS" start="2025-10-20T00:43:35.906474" elapsed="0.003371"/>
+</for>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-10-20T00:43:35.911117" level="INFO">Length is 1.</msg>
+<msg time="2025-10-20T00:43:35.911312" level="INFO">${normal_count} = 1</msg>
+<var>${normal_count}</var>
+<arg>${normal_types}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-10-20T00:43:35.910415" elapsed="0.000946"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${normal_count} == 1</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T00:43:35.911884" elapsed="0.000699"/>
+</kw>
+<doc>Test skip 'ต่อคน' type</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:43:35.901294" elapsed="0.011978"/>
+</test>
+<test id="s1-t5" name="Verify Menu Item Has Required Properties" line="43">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T00:43:35.916580" level="INFO">&amp;{MENU1} = { foodId=1 | foodname=Spring Rolls | price=100 | foodImage=img1.jpg }</msg>
+<var>&amp;{MENU1}</var>
+<arg>foodId=1</arg>
+<arg>foodname=Spring Rolls</arg>
+<arg>price=100</arg>
+<arg>foodImage=img1.jpg</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T00:43:35.915429" elapsed="0.001229"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${MENU1}</arg>
+<arg>foodId</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-10-20T00:43:35.917168" elapsed="0.000439"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${MENU1}</arg>
+<arg>foodname</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-10-20T00:43:35.918152" elapsed="0.000442"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${MENU1}</arg>
+<arg>price</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-10-20T00:43:35.919254" elapsed="0.000489"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${MENU1}</arg>
+<arg>foodImage</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-10-20T00:43:35.920334" elapsed="0.000362"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${MENU1}[foodname]</arg>
+<arg>Spring Rolls</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T00:43:35.921151" elapsed="0.000453"/>
+</kw>
+<doc>Test menu item properties</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:43:35.914220" elapsed="0.007893"/>
+</test>
+<test id="s1-t6" name="Verify Cart Highlight Logic" line="53">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T00:43:35.924673" level="INFO">&amp;{MENU1} = { foodId=1 | foodname=Spring Rolls }</msg>
+<var>&amp;{MENU1}</var>
+<arg>foodId=1</arg>
+<arg>foodname=Spring Rolls</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T00:43:35.924033" elapsed="0.000730"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T00:43:35.925968" level="INFO">${cart_qty} = 3</msg>
+<var>${cart_qty}</var>
+<arg>3</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T00:43:35.925389" elapsed="0.000677"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-20T00:43:35.927537" level="INFO">${has_items} = True</msg>
+<var>${has_items}</var>
+<arg>${cart_qty} &gt; 0</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-20T00:43:35.926770" elapsed="0.000866"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${has_items} == True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T00:43:35.928197" elapsed="0.000606"/>
+</kw>
+<doc>Test has-items class when qty &gt; 0</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:43:35.922971" elapsed="0.006459"/>
+</test>
+<status status="PASS" start="2025-10-20T00:43:35.790257" elapsed="0.140556"/>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="6" fail="0" skip="0">Logic</stat>
+</tag>
+<suite>
+<stat name="orderfoodCuatomer" id="s1" pass="6" fail="0" skip="0">orderfoodCuatomer</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

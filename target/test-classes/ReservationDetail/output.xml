@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.9 on win32)" generated="2025-10-20T00:45:38.629592" rpa="false" schemaversion="5">
+<suite id="s1" name="ReservationDetail" source="C:\ShabuProject\target\test-classes\ReservationDetail\ReservationDetail.robot">
+<test id="s1-t1" name="Verify Empty Reservations Show Empty State" line="5">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-10-20T00:45:38.704585" level="INFO">${reservations} = []</msg>
+<var>${reservations}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-10-20T00:45:38.703938" elapsed="0.000762"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-20T00:45:38.706218" level="INFO">${has_reservations} = False</msg>
+<var>${has_reservations}</var>
+<arg>len(${reservations}) &gt; 0</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-20T00:45:38.705408" elapsed="0.000896"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${has_reservations} == False</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T00:45:38.707125" elapsed="0.000814"/>
+</kw>
+<doc>Test empty reservations show empty state</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:45:38.700923" elapsed="0.007625"/>
+</test>
+<test id="s1-t2" name="Verify User Welcome Display" line="12">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T00:45:38.711208" level="INFO">&amp;{USER} = { cusname=John Doe }</msg>
+<var>&amp;{USER}</var>
+<arg>cusname=John Doe</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T00:45:38.710595" elapsed="0.000680"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-20T00:45:38.713166" level="INFO">${has_user} = True</msg>
+<var>${has_user}</var>
+<arg>'${USER}[cusname]' != ''</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-20T00:45:38.711861" elapsed="0.001407"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${has_user} == True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T00:45:38.713889" elapsed="0.000684"/>
+</kw>
+<doc>Test user welcome if user exists</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:45:38.709472" elapsed="0.005637"/>
+</test>
+<test id="s1-t3" name="Verify Multiple Reservations Display" line="19">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T00:45:38.717768" level="INFO">&amp;{RES1} = { reserveid=1 | status=confirm }</msg>
+<var>&amp;{RES1}</var>
+<arg>reserveid=1</arg>
+<arg>status=confirm</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T00:45:38.717097" elapsed="0.000757"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T00:45:38.718978" level="INFO">&amp;{RES2} = { reserveid=2 | status=pending }</msg>
+<var>&amp;{RES2}</var>
+<arg>reserveid=2</arg>
+<arg>status=pending</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T00:45:38.718443" elapsed="0.000606"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-10-20T00:45:38.720183" level="INFO">${reservations} = [{'reserveid': '1', 'status': 'confirm'}, {'reserveid': '2', 'status': 'pending'}]</msg>
+<var>${reservations}</var>
+<arg>${RES1}</arg>
+<arg>${RES2}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-10-20T00:45:38.719631" elapsed="0.000627"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-10-20T00:45:38.721116" level="INFO">Length is 2.</msg>
+<msg time="2025-10-20T00:45:38.721294" level="INFO">${count} = 2</msg>
+<var>${count}</var>
+<arg>${reservations}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-10-20T00:45:38.720777" elapsed="0.000577"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${count} == 2</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T00:45:38.721865" elapsed="0.000678"/>
+</kw>
+<doc>Test multiple reservations logic</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:45:38.716034" elapsed="0.007157"/>
+</test>
+<test id="s1-t4" name="Verify Status Badge Class" line="28">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T00:45:38.727488" level="INFO">&amp;{RES1} = { status=confirm }</msg>
+<var>&amp;{RES1}</var>
+<arg>status=confirm</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T00:45:38.727042" elapsed="0.000533"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-20T00:45:38.729078" level="INFO">${status_lower} = confirm</msg>
+<var>${status_lower}</var>
+<arg>'${RES1}[status]'.lower()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-20T00:45:38.728236" elapsed="0.000984"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${status_lower}</arg>
+<arg>confirm</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T00:45:38.730078" elapsed="0.000674"/>
+</kw>
+<doc>Test status class calculation</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:45:38.725985" elapsed="0.005268"/>
+</test>
+<test id="s1-t5" name="Verify Cancel Button Conditional" line="35">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T00:45:38.733286" level="INFO">&amp;{RES_CONFIRM} = { status=confirm }</msg>
+<var>&amp;{RES_CONFIRM}</var>
+<arg>status=confirm</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T00:45:38.732899" elapsed="0.000438"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T00:45:38.734263" level="INFO">&amp;{RES_PENDING} = { status=pending }</msg>
+<var>&amp;{RES_PENDING}</var>
+<arg>status=pending</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T00:45:38.733766" elapsed="0.000565"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-20T00:45:38.735568" level="INFO">${show_cancel_confirm} = True</msg>
+<var>${show_cancel_confirm}</var>
+<arg>'${RES_CONFIRM}[status]' == 'confirm'</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-20T00:45:38.734846" elapsed="0.000790"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-20T00:45:38.736960" level="INFO">${show_cancel_pending} = False</msg>
+<var>${show_cancel_pending}</var>
+<arg>'${RES_PENDING}[status]' == 'confirm'</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-20T00:45:38.736202" elapsed="0.000827"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${show_cancel_confirm} == True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T00:45:38.737505" elapsed="0.000547"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${show_cancel_pending} == False</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T00:45:38.738683" elapsed="0.000718"/>
+</kw>
+<doc>Test cancel button only for confirm status</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:45:38.731970" elapsed="0.007977"/>
+</test>
+<status status="PASS" start="2025-10-20T00:45:38.632179" elapsed="0.109213"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="5" fail="0" skip="0">Logic</stat>
+</tag>
+<suite>
+<stat name="ReservationDetail" id="s1" pass="5" fail="0" skip="0">ReservationDetail</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

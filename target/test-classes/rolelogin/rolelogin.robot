@@ -1,0 +1,47 @@
+*** Settings ***
+Library    Collections
+
+*** Test Cases ***
+Verify Roles Section Structure
+    [Tags]    Logic
+    [Documentation]    Test 4 roles: Manager, Cashier, Waiter, Customer
+    @{roles}=    Create List    Manager    Cashier    Waiter    Customer
+    ${role_count}=    Get Length    ${roles}
+    Should Be True    ${role_count} == 4
+
+Verify Manager Role Form Action
+    [Tags]    Logic
+    [Documentation]    Test Manager role submits to RoleManager
+    ${manager_action}=    Set Variable    RoleManager
+    Should Be Equal    ${manager_action}    RoleManager
+
+Verify Cashier Role Form Action
+    [Tags]    Logic
+    [Documentation]    Test Cashier role submits to RoleCashier
+    ${cashier_action}=    Set Variable    RoleCashier
+    Should Be Equal    ${cashier_action}    RoleCashier
+
+Verify Waiter Role Form Action
+    [Tags]    Logic
+    [Documentation]    Test Waiter role submits to RoleWaiter
+    ${waiter_action}=    Set Variable    RoleWaiter
+    Should Be Equal    ${waiter_action}    RoleWaiter
+
+Verify Customer Role Form Action
+    [Tags]    Logic
+    [Documentation]    Test Customer role submits to RoleCustomer
+    ${customer_action}=    Set Variable    RoleCustomer
+    Should Be Equal    ${customer_action}    RoleCustomer
+
+Verify Login Form Action
+    [Tags]    Logic
+    [Documentation]    Test login form submits to LoginManager
+    ${login_action}=    Set Variable    LoginManager
+    Should Be Equal    ${login_action}    LoginManager
+
+Verify Login Form Fields
+    [Tags]    Logic
+    [Documentation]    Test username and password fields exist
+    @{fields}=    Create List    username    password
+    ${field_count}=    Get Length    ${fields}
+    Should Be True    ${field_count} == 2

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.9 on win32)" generated="2025-10-20T00:53:51.746321" rpa="false" schemaversion="5">
+<suite id="s1" name="welcomeCustomer" source="C:\ShabuProject\target\test-classes\welcomeCustomer\welcomeCustomer.robot">
+<test id="s1-t1" name="Verify Navigation Links Structure" line="5">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-10-20T00:53:51.816177" level="INFO">@{links} = [ Home | Reserve | Menu | Table | Contact ]</msg>
+<var>@{links}</var>
+<arg>Home</arg>
+<arg>Reserve</arg>
+<arg>Menu</arg>
+<arg>Table</arg>
+<arg>Contact</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-10-20T00:53:51.815589" elapsed="0.000672"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-10-20T00:53:51.817334" level="INFO">Length is 5.</msg>
+<msg time="2025-10-20T00:53:51.817563" level="INFO">${link_count} = 5</msg>
+<var>${link_count}</var>
+<arg>${links}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-10-20T00:53:51.816930" elapsed="0.000685"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${link_count} == 5</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T00:53:51.818167" elapsed="0.000680"/>
+</kw>
+<doc>Test navigation has Home, Reserve, Menu, Table, Contact links</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:53:51.813386" elapsed="0.005963"/>
+</test>
+<test id="s1-t2" name="Verify Hero Section Display" line="12">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-10-20T00:53:51.821244" level="INFO">@{buttons} = [ View Menu | Reserve Table ]</msg>
+<var>@{buttons}</var>
+<arg>View Menu</arg>
+<arg>Reserve Table</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-10-20T00:53:51.820863" elapsed="0.000447"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-10-20T00:53:51.821891" level="INFO">Length is 2.</msg>
+<msg time="2025-10-20T00:53:51.822031" level="INFO">${button_count} = 2</msg>
+<var>${button_count}</var>
+<arg>${buttons}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-10-20T00:53:51.821660" elapsed="0.000415"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${button_count} == 2</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T00:53:51.822403" elapsed="0.000726"/>
+</kw>
+<doc>Test hero has title and buttons</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:53:51.820062" elapsed="0.003529"/>
+</test>
+<test id="s1-t3" name="Verify Conditional User Info Display" line="19">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T00:53:51.825688" level="INFO">&amp;{USER} = { cusname=John Doe }</msg>
+<var>&amp;{USER}</var>
+<arg>cusname=John Doe</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T00:53:51.825225" elapsed="0.000516"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-20T00:53:51.826772" level="INFO">${has_user} = True</msg>
+<var>${has_user}</var>
+<arg>'${USER}[cusname]' != ''</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-20T00:53:51.826127" elapsed="0.000730"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${has_user} == True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T00:53:51.827509" elapsed="0.000634"/>
+</kw>
+<doc>Test user info shows if user exists</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:53:51.824405" elapsed="0.004232"/>
+</test>
+<test id="s1-t4" name="Verify My Reservations Button Conditional" line="26">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T00:53:51.830886" level="INFO">&amp;{USER} = { cusname=John Doe }</msg>
+<var>&amp;{USER}</var>
+<arg>cusname=John Doe</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T00:53:51.830430" elapsed="0.000514"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-20T00:53:51.831842" level="INFO">${show_reservations} = True</msg>
+<var>${show_reservations}</var>
+<arg>'${USER}[cusname]' != ''</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-20T00:53:51.831306" elapsed="0.000589"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${show_reservations} == True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T00:53:51.832389" elapsed="0.000533"/>
+</kw>
+<doc>Test my reservations button only if logged in</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:53:51.829294" elapsed="0.004085"/>
+</test>
+<test id="s1-t5" name="Verify Quick Action Button Conditional" line="33">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T00:53:51.835228" level="INFO">&amp;{USER} = { cusname=John Doe }</msg>
+<var>&amp;{USER}</var>
+<arg>cusname=John Doe</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T00:53:51.834749" elapsed="0.000543"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-20T00:53:51.836426" level="INFO">${show_quick_action} = True</msg>
+<var>${show_quick_action}</var>
+<arg>'${USER}[cusname]' != ''</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-20T00:53:51.835744" elapsed="0.000743"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${show_quick_action} == True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T00:53:51.836924" elapsed="0.000470"/>
+</kw>
+<doc>Test quick action for reservations if user logged in</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:53:51.834011" elapsed="0.003704"/>
+</test>
+<test id="s1-t6" name="Verify Footer Links Structure" line="40">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-10-20T00:53:51.839358" level="INFO">@{footer_links} = [ Home | Reserve | Menu | Table | Contact ]</msg>
+<var>@{footer_links}</var>
+<arg>Home</arg>
+<arg>Reserve</arg>
+<arg>Menu</arg>
+<arg>Table</arg>
+<arg>Contact</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-10-20T00:53:51.838995" elapsed="0.000427"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-10-20T00:53:51.840113" level="INFO">Length is 5.</msg>
+<msg time="2025-10-20T00:53:51.840266" level="INFO">${footer_count} = 5</msg>
+<var>${footer_count}</var>
+<arg>${footer_links}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-10-20T00:53:51.839848" elapsed="0.000463"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${footer_count} == 5</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T00:53:51.840622" elapsed="0.000443"/>
+</kw>
+<doc>Test footer has same links as nav</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:53:51.838272" elapsed="0.003086"/>
+</test>
+<test id="s1-t7" name="Verify Page Title Display" line="47">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T00:53:51.842978" level="INFO">${title} = ShaBu Restaurant - Authentic Japanese Hot Pot</msg>
+<var>${title}</var>
+<arg>ShaBu Restaurant - Authentic Japanese Hot Pot</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T00:53:51.842690" elapsed="0.000344"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${title}</arg>
+<arg>ShaBu Restaurant - Authentic Japanese Hot Pot</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T00:53:51.843444" elapsed="0.001343"/>
+</kw>
+<doc>Test page title</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:53:51.841974" elapsed="0.003804"/>
+</test>
+<status status="PASS" start="2025-10-20T00:53:51.749152" elapsed="0.098027"/>
+</suite>
+<statistics>
+<total>
+<stat pass="7" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="7" fail="0" skip="0">Logic</stat>
+</tag>
+<suite>
+<stat name="welcomeCustomer" id="s1" pass="7" fail="0" skip="0">welcomeCustomer</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

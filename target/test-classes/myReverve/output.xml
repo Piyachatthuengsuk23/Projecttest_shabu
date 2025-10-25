@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.9 on win32)" generated="2025-10-20T01:12:45.422850" rpa="false" schemaversion="5">
+<suite id="s1" name="myReverve" source="C:\ShabuProject\target\test-classes\myReverve\myReverve.robot">
+<test id="s1-t1" name="Verify My Reservations Conditional Display" line="5">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T01:12:45.492460" level="INFO">&amp;{RESERVATION} = { tableid=5 | customerName=John Doe | date=20/10/2025 | time=18:00 }</msg>
+<var>&amp;{RESERVATION}</var>
+<arg>tableid=5</arg>
+<arg>customerName=John Doe</arg>
+<arg>date=20/10/2025</arg>
+<arg>time=18:00</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T01:12:45.491490" elapsed="0.001089"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-20T01:12:45.494305" level="INFO">${has_reservation} = True</msg>
+<var>${has_reservation}</var>
+<arg>'${RESERVATION}[tableid]' != ''</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-20T01:12:45.493436" elapsed="0.000943"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${has_reservation} == True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T01:12:45.494884" elapsed="0.000482"/>
+</kw>
+<doc>Test conditional display based on tableid</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T01:12:45.489112" elapsed="0.006637"/>
+</test>
+<test id="s1-t2" name="Verify Reservation Details Properties" line="12">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T01:12:45.497967" level="INFO">&amp;{RESERVATION} = { tableid=5 | customerName=John Doe | date=20/10/2025 | time=18:00 }</msg>
+<var>&amp;{RESERVATION}</var>
+<arg>tableid=5</arg>
+<arg>customerName=John Doe</arg>
+<arg>date=20/10/2025</arg>
+<arg>time=18:00</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T01:12:45.497523" elapsed="0.000502"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${RESERVATION}</arg>
+<arg>tableid</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-10-20T01:12:45.498479" elapsed="0.000353"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${RESERVATION}</arg>
+<arg>customerName</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-10-20T01:12:45.499370" elapsed="0.000365"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${RESERVATION}</arg>
+<arg>date</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-10-20T01:12:45.500108" elapsed="0.000231"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${RESERVATION}</arg>
+<arg>time</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-10-20T01:12:45.500711" elapsed="0.000335"/>
+</kw>
+<doc>Test reservation details</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T01:12:45.496620" elapsed="0.004890"/>
+</test>
+<test id="s1-t3" name="Verify Page Title Display" line="21">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T01:12:45.503340" level="INFO">${title} = การจองของฉัน</msg>
+<var>${title}</var>
+<arg>การจองของฉัน</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T01:12:45.503034" elapsed="0.000369"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${title}</arg>
+<arg>การจองของฉัน</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T01:12:45.503749" elapsed="0.000283"/>
+</kw>
+<doc>Test page title</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T01:12:45.502322" elapsed="0.002097"/>
+</test>
+<status status="PASS" start="2025-10-20T01:12:45.425929" elapsed="0.079666"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="3" fail="0" skip="0">Logic</stat>
+</tag>
+<suite>
+<stat name="myReverve" id="s1" pass="3" fail="0" skip="0">myReverve</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

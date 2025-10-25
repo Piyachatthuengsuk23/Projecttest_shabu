@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.9 on win32)" generated="2025-10-20T00:52:27.623765" rpa="false" schemaversion="5">
+<suite id="s1" name="welcomeCashier" source="C:\ShabuProject\target\test-classes\welcomeCashier\welcomeCashier.robot">
+<test id="s1-t1" name="Verify User Welcome Display" line="5">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T00:52:27.700190" level="INFO">&amp;{USER} = { empUsername=admin | empname=John Doe | position=Manager }</msg>
+<var>&amp;{USER}</var>
+<arg>empUsername=admin</arg>
+<arg>empname=John Doe</arg>
+<arg>position=Manager</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T00:52:27.699253" elapsed="0.001065"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-20T00:52:27.701880" level="INFO">${has_user} = True</msg>
+<var>${has_user}</var>
+<arg>'${USER}[empUsername]' != ''</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-20T00:52:27.700999" elapsed="0.000966"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${has_user} == True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T00:52:27.702456" elapsed="0.000553"/>
+</kw>
+<doc>Test user info display</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:52:27.696771" elapsed="0.006656"/>
+</test>
+<test id="s1-t2" name="Verify Employee Username Display" line="12">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T00:52:27.705404" level="INFO">&amp;{USER} = { empUsername=admin }</msg>
+<var>&amp;{USER}</var>
+<arg>empUsername=admin</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T00:52:27.704889" elapsed="0.000592"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${USER}</arg>
+<arg>empUsername</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-10-20T00:52:27.706011" elapsed="0.000367"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${USER}[empUsername]</arg>
+<arg>admin</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T00:52:27.706723" elapsed="0.000343"/>
+</kw>
+<doc>Test username property</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:52:27.704101" elapsed="0.003340"/>
+</test>
+<test id="s1-t3" name="Verify Employee Name Display" line="19">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T00:52:27.709372" level="INFO">&amp;{USER} = { empname=John Doe }</msg>
+<var>&amp;{USER}</var>
+<arg>empname=John Doe</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T00:52:27.708888" elapsed="0.000552"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${USER}</arg>
+<arg>empname</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-10-20T00:52:27.709944" elapsed="0.000573"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${USER}[empname]</arg>
+<arg>John Doe</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T00:52:27.711026" elapsed="0.000461"/>
+</kw>
+<doc>Test name property</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:52:27.708122" elapsed="0.003771"/>
+</test>
+<test id="s1-t4" name="Verify Employee Position Display" line="26">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T00:52:27.713866" level="INFO">&amp;{USER} = { position=Manager }</msg>
+<var>&amp;{USER}</var>
+<arg>position=Manager</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T00:52:27.713446" elapsed="0.000480"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${USER}</arg>
+<arg>position</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-10-20T00:52:27.714253" elapsed="0.000364"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${USER}[position]</arg>
+<arg>Manager</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T00:52:27.715017" elapsed="0.000250"/>
+</kw>
+<doc>Test position property</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:52:27.712612" elapsed="0.003130"/>
+</test>
+<test id="s1-t5" name="Verify Form Action Existence" line="33">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T00:52:27.717563" level="INFO">${form_action} = listTableReserveForCashier</msg>
+<var>${form_action}</var>
+<arg>listTableReserveForCashier</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T00:52:27.717278" elapsed="0.000340"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${form_action}</arg>
+<arg>listTableReserveForCashier</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T00:52:27.717973" elapsed="0.000336"/>
+</kw>
+<doc>Test form submits to listTableReserveForCashier</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:52:27.716500" elapsed="0.002142"/>
+</test>
+<test id="s1-t6" name="Verify Page Welcome Message" line="39">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T00:52:27.720388" level="INFO">${welcome} = Welcome I kuy</msg>
+<var>${welcome}</var>
+<arg>Welcome I kuy</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T00:52:27.720062" elapsed="0.000392"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${welcome}</arg>
+<arg>Welcome I kuy</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T00:52:27.720904" elapsed="0.000399"/>
+</kw>
+<doc>Test welcome message exists</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:52:27.719309" elapsed="0.002455"/>
+</test>
+<status status="PASS" start="2025-10-20T00:52:27.626869" elapsed="0.096052"/>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="6" fail="0" skip="0">Logic</stat>
+</tag>
+<suite>
+<stat name="welcomeCashier" id="s1" pass="6" fail="0" skip="0">welcomeCashier</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

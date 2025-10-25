@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.9 on win32)" generated="2025-10-20T00:57:19.280065" rpa="false" schemaversion="5">
+<suite id="s1" name="ReserveSucces" source="C:\ShabuProject\target\test-classes\ReserveSucces\ReserveSucces.robot">
+<test id="s1-t1" name="Verify Success Message Display" line="5">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T00:57:19.349309" level="INFO">${success_title} = จองโต๊ะสำเร็จ!</msg>
+<var>${success_title}</var>
+<arg>จองโต๊ะสำเร็จ!</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T00:57:19.347775" elapsed="0.001696"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${success_title}</arg>
+<arg>จองโต๊ะสำเร็จ!</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T00:57:19.350201" elapsed="0.000626"/>
+</kw>
+<doc>Test success header and icon exist</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:57:19.345717" elapsed="0.005674"/>
+</test>
+<test id="s1-t2" name="Verify Reservation ID Display" line="11">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T00:57:19.353711" level="INFO">&amp;{RESERVATION} = { reserveid=123 }</msg>
+<var>&amp;{RESERVATION}</var>
+<arg>reserveid=123</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T00:57:19.353135" elapsed="0.000642"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${RESERVATION}</arg>
+<arg>reserveid</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-10-20T00:57:19.354194" elapsed="0.000338"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${RESERVATION}[reserveid] &gt; 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T00:57:19.354950" elapsed="0.000411"/>
+</kw>
+<doc>Test reservation ID property</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:57:19.352256" elapsed="0.003455"/>
+</test>
+<test id="s1-t3" name="Verify Customer Info Display" line="18">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T00:57:19.357949" level="INFO">&amp;{CUSTOMER} = { cusname=John Doe | phonenumber=0123456789 | gmail=john@example.com }</msg>
+<var>&amp;{CUSTOMER}</var>
+<arg>cusname=John Doe</arg>
+<arg>phonenumber=0123456789</arg>
+<arg>gmail=john@example.com</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T00:57:19.357456" elapsed="0.000556"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${CUSTOMER}</arg>
+<arg>cusname</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-10-20T00:57:19.358433" elapsed="0.000310"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${CUSTOMER}</arg>
+<arg>phonenumber</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-10-20T00:57:19.359171" elapsed="0.000389"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${CUSTOMER}</arg>
+<arg>gmail</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-10-20T00:57:19.359964" elapsed="0.000353"/>
+</kw>
+<doc>Test customer details from reservation</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:57:19.356536" elapsed="0.004135"/>
+</test>
+<test id="s1-t4" name="Verify Reservation Details Properties" line="26">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T00:57:19.362638" level="INFO">&amp;{RESERVATION} = { reservedate=2025-10-20 | reservetime=18:00 | numberOfGuests=4 | status=Confirmed }</msg>
+<var>&amp;{RESERVATION}</var>
+<arg>reservedate=2025-10-20</arg>
+<arg>reservetime=18:00</arg>
+<arg>numberOfGuests=4</arg>
+<arg>status=Confirmed</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T00:57:19.362136" elapsed="0.000565"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-20T00:57:19.363431" level="INFO">&amp;{TABLE} = { tableid=5 | capacity=6 }</msg>
+<var>&amp;{TABLE}</var>
+<arg>tableid=5</arg>
+<arg>capacity=6</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-20T00:57:19.363093" elapsed="0.000382"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${RESERVATION}</arg>
+<arg>reservedate</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-10-20T00:57:19.363880" elapsed="0.000326"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${TABLE}</arg>
+<arg>tableid</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-10-20T00:57:19.364499" elapsed="0.000227"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${RESERVATION}[status]</arg>
+<arg>Confirmed</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T00:57:19.365085" elapsed="0.000329"/>
+</kw>
+<doc>Test reservation details</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:57:19.361381" elapsed="0.004429"/>
+</test>
+<test id="s1-t5" name="Verify Date Formatting Logic" line="35">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T00:57:19.367893" level="INFO">${formatted_date} = 20 ตุลาคม 2568</msg>
+<var>${formatted_date}</var>
+<arg>20 ตุลาคม 2568</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T00:57:19.367488" elapsed="0.000513"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-20T00:57:19.369378" level="INFO">${has_format} = True</msg>
+<var>${has_format}</var>
+<arg>len('${formatted_date}') &gt; 0</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-20T00:57:19.368618" elapsed="0.000829"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${has_format} == True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T00:57:19.369937" elapsed="0.000541"/>
+</kw>
+<doc>Test date formatting works</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:57:19.366640" elapsed="0.004174"/>
+</test>
+<test id="s1-t6" name="Verify Action Button Existence" line="42">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-20T00:57:19.372733" level="INFO">${back_link} = gotoWellcomeCustomerT</msg>
+<var>${back_link}</var>
+<arg>gotoWellcomeCustomerT</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-20T00:57:19.372412" elapsed="0.000371"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${back_link}</arg>
+<arg>gotoWellcomeCustomerT</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-20T00:57:19.373254" elapsed="0.000364"/>
+</kw>
+<doc>Test back to home button</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:57:19.371540" elapsed="0.002439"/>
+</test>
+<test id="s1-t7" name="Verify Important Notes Display" line="48">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-10-20T00:57:19.375959" level="INFO">@{notes} = [ กรุณามาถึงร้านก่อนเวลาจอง 15 นาที | หากมาสายเกิน 20 นาที การจองอาจถูกยกเลิก ]</msg>
+<var>@{notes}</var>
+<arg>กรุณามาถึงร้านก่อนเวลาจอง 15 นาที</arg>
+<arg>หากมาสายเกิน 20 นาที การจองอาจถูกยกเลิก</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-10-20T00:57:19.375500" elapsed="0.000547"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-10-20T00:57:19.377714" level="INFO">Length is 2.</msg>
+<msg time="2025-10-20T00:57:19.377860" level="INFO">${note_count} = 2</msg>
+<var>${note_count}</var>
+<arg>${notes}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-10-20T00:57:19.376811" elapsed="0.001089"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${note_count} == 2</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-20T00:57:19.378399" elapsed="0.000473"/>
+</kw>
+<doc>Test static important notes exist</doc>
+<tag>Logic</tag>
+<status status="PASS" start="2025-10-20T00:57:19.374714" elapsed="0.004471"/>
+</test>
+<status status="PASS" start="2025-10-20T00:57:19.283230" elapsed="0.097011"/>
+</suite>
+<statistics>
+<total>
+<stat pass="7" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="7" fail="0" skip="0">Logic</stat>
+</tag>
+<suite>
+<stat name="ReserveSucces" id="s1" pass="7" fail="0" skip="0">ReserveSucces</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
